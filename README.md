@@ -1,10 +1,7 @@
 # Getting started
 
-## How to Use
-You can install this package via PIP
-```pip install tangocard-raasv2```
-
 ## How to Build
+
 
 You must have Python 2 >=2.7.9 or Python 3 >=3.4 installed on your system to install and run this SDK. This SDK package depends on other Python packages like nose, jsonpickle etc. 
 These dependencies are defined in the ```requirements.txt``` file that comes with the SDK.
@@ -16,12 +13,12 @@ This should display the version of the PIP Dependency Manager installed if your 
 * Using command line, navigate to the directory containing the generated files (including ```requirements.txt```) for the SDK.
 * Run the command ```pip install -r requirements.txt```. This should install all the required dependencies.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=RaaSV2-Python)
+![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=Tangocard-Python)
 
 
 ## How to Use
 
-The following section explains how to use the RaaSV2 SDK package in a new project.
+The following section explains how to use the Tangocard SDK package in a new project.
 
 ### 1. Open Project in an IDE
 
@@ -31,17 +28,17 @@ Open up a Python IDE like PyCharm. The basic workflow presented here is also app
 
 Click on ```Open``` in PyCharm to browse to your generated SDK directory and then click ```OK```.
 
-![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=RaaSV2-Python)     
+![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=Tangocard-Python)     
 
 The project files will be displayed in the side bar as follows:
 
-![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=RaaSV2-Python&projectName=raas_v2)     
+![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=Tangocard-Python&projectName=tangocard)     
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=RaaSV2-Python&projectName=raas_v2)
+![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=Tangocard-Python&projectName=tangocard)
 
 Name the directory as "test"
 
@@ -49,7 +46,7 @@ Name the directory as "test"
    
 Add a python file to this project with the name "testsdk"
 
-![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=RaaSV2-Python&projectName=raas_v2)
+![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=Tangocard-Python&projectName=tangocard)
 
 Name it "testsdk"
 
@@ -58,10 +55,10 @@ Name it "testsdk"
 In your python file you will be required to import the generated python library using the following code lines
 
 ```Python
-from raas_v2.raasv2_client import *
+from tangocard.tangocard_client.py import *
 ```
 
-![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=RaaSV2-Python&libraryName=raas_v2.raasv2_client&projectName=raas_v2)
+![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=Tangocard-Python&libraryName=tangocard.tangocard_client.py&projectName=tangocard)
 
 After this you can write code to instantiate an API client object, get a controller object and  make API calls. Sample code is given in the subsequent sections.
 
@@ -69,7 +66,7 @@ After this you can write code to instantiate an API client object, get a control
 
 To run the file within your test project, right click on your Python file inside your Test project and click on ```Run```
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=RaaSV2-Python&libraryName=raas_v2.raasv2_client&projectName=raas_v2)
+![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=Tangocard-Python&libraryName=tangocard.tangocard_client.py&projectName=tangocard)
 
 
 ## How to Test
@@ -101,12 +98,12 @@ API client can be initialized as following.
 platform_name = "QAPlatform2" # RaaS v2 API Platform Name
 platform_key = "apYPfT6HNONpDRUj3CLGWYt7gvIHONpDRUYPfT6Hj" # RaaS v2 API Platform Key
 
-client = RaaSV2Client(platform_name, platform_key)
+client = TangocardClient(platform_name, platform_key)
 ```
 
-## Class Reference
+# Class Reference
 
-### <a name="list_of_controllers"></a>List of Controllers
+## <a name="list_of_controllers"></a>List of Controllers
 
 * [AccountsController](#accounts_controller)
 * [OrdersController](#orders_controller)
@@ -115,9 +112,9 @@ client = RaaSV2Client(platform_name, platform_key)
 * [StatusController](#status_controller)
 * [CustomersController](#customers_controller)
 
-### <a name="accounts_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AccountsController") AccountsController
+## <a name="accounts_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AccountsController") AccountsController
 
-#### Get controller instance
+### Get controller instance
 
 An instance of the ``` AccountsController ``` class can be accessed from the API Client.
 
@@ -125,7 +122,7 @@ An instance of the ``` AccountsController ``` class can be accessed from the API
  accounts_client = client.accounts
 ```
 
-#### <a name="get_accounts_by_customer"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.get_accounts_by_customer") get_accounts_by_customer
+### <a name="get_accounts_by_customer"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.get_accounts_by_customer") get_accounts_by_customer
 
 > Gets a list of accounts for a given customer
 
@@ -152,7 +149,7 @@ result = accounts_client.get_accounts_by_customer(customer_identifier)
 ```
 
 
-#### <a name="get_account"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.get_account") get_account
+### <a name="get_account"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.get_account") get_account
 
 > Get an account
 
@@ -179,7 +176,7 @@ result = accounts_client.get_account(account_identifier)
 ```
 
 
-#### <a name="create_account"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.create_account") create_account
+### <a name="create_account"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.create_account") create_account
 
 > Create an account under a given customer
 
@@ -209,7 +206,7 @@ result = accounts_client.create_account(customer_identifier, body)
 ```
 
 
-#### <a name="get_all_accounts"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.get_all_accounts") get_all_accounts
+### <a name="get_all_accounts"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.get_all_accounts") get_all_accounts
 
 > Gets all accounts under the platform
 
@@ -228,9 +225,9 @@ result = accounts_client.get_all_accounts()
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OrdersController") OrdersController
+## <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OrdersController") OrdersController
 
-#### Get controller instance
+### Get controller instance
 
 An instance of the ``` OrdersController ``` class can be accessed from the API Client.
 
@@ -238,7 +235,7 @@ An instance of the ``` OrdersController ``` class can be accessed from the API C
  orders_client = client.orders
 ```
 
-#### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.create_order") create_order
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.create_order") create_order
 
 > TODO: Add a method description
 
@@ -265,7 +262,7 @@ result = orders_client.create_order(body)
 ```
 
 
-#### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.get_order") get_order
+### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.get_order") get_order
 
 > TODO: Add a method description
 
@@ -292,7 +289,7 @@ result = orders_client.get_order(reference_order_id)
 ```
 
 
-#### <a name="create_resend_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.create_resend_order") create_resend_order
+### <a name="create_resend_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.create_resend_order") create_resend_order
 
 > TODO: Add a method description
 
@@ -319,7 +316,7 @@ result = orders_client.create_resend_order(reference_order_id)
 ```
 
 
-#### <a name="get_orders"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.get_orders") get_orders
+### <a name="get_orders"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.get_orders") get_orders
 
 > TODO: Add a method description
 
@@ -362,10 +359,10 @@ collect['start_date'] = start_date
 end_date = datetime.now()
 collect['end_date'] = end_date
 
-elements_per_block = 106
+elements_per_block = 58
 collect['elements_per_block'] = elements_per_block
 
-page = 106
+page = 58
 collect['page'] = page
 
 
@@ -376,9 +373,9 @@ result = orders_client.get_orders(collect)
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="catalog_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CatalogController") CatalogController
+## <a name="catalog_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CatalogController") CatalogController
 
-#### Get controller instance
+### Get controller instance
 
 An instance of the ``` CatalogController ``` class can be accessed from the API Client.
 
@@ -386,7 +383,7 @@ An instance of the ``` CatalogController ``` class can be accessed from the API 
  catalog_client = client.catalog
 ```
 
-#### <a name="get_catalog"></a>![Method: ](https://apidocs.io/img/method.png ".CatalogController.get_catalog") get_catalog
+### <a name="get_catalog"></a>![Method: ](https://apidocs.io/img/method.png ".CatalogController.get_catalog") get_catalog
 
 > Get Catalog
 
@@ -405,9 +402,9 @@ result = catalog_client.get_catalog()
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="exchange_rates_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ExchangeRatesController") ExchangeRatesController
+## <a name="exchange_rates_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ExchangeRatesController") ExchangeRatesController
 
-#### Get controller instance
+### Get controller instance
 
 An instance of the ``` ExchangeRatesController ``` class can be accessed from the API Client.
 
@@ -415,7 +412,7 @@ An instance of the ``` ExchangeRatesController ``` class can be accessed from th
  exchange_rates_client = client.exchange_rates
 ```
 
-#### <a name="get_exchange_rates"></a>![Method: ](https://apidocs.io/img/method.png ".ExchangeRatesController.get_exchange_rates") get_exchange_rates
+### <a name="get_exchange_rates"></a>![Method: ](https://apidocs.io/img/method.png ".ExchangeRatesController.get_exchange_rates") get_exchange_rates
 
 > Retrieve current exchange rates
 
@@ -434,9 +431,9 @@ exchange_rates_client.get_exchange_rates()
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="status_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StatusController") StatusController
+## <a name="status_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StatusController") StatusController
 
-#### Get controller instance
+### Get controller instance
 
 An instance of the ``` StatusController ``` class can be accessed from the API Client.
 
@@ -444,7 +441,7 @@ An instance of the ``` StatusController ``` class can be accessed from the API C
  status_client = client.status
 ```
 
-#### <a name="get_system_status"></a>![Method: ](https://apidocs.io/img/method.png ".StatusController.get_system_status") get_system_status
+### <a name="get_system_status"></a>![Method: ](https://apidocs.io/img/method.png ".StatusController.get_system_status") get_system_status
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -465,9 +462,9 @@ result = status_client.get_system_status()
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="customers_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CustomersController") CustomersController
+## <a name="customers_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CustomersController") CustomersController
 
-#### Get controller instance
+### Get controller instance
 
 An instance of the ``` CustomersController ``` class can be accessed from the API Client.
 
@@ -475,7 +472,7 @@ An instance of the ``` CustomersController ``` class can be accessed from the AP
  customers_client = client.customers
 ```
 
-#### <a name="get_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_customer") get_customer
+### <a name="get_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_customer") get_customer
 
 > Get a customer
 
@@ -502,7 +499,7 @@ result = customers_client.get_customer(customer_identifier)
 ```
 
 
-#### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.create_customer") create_customer
+### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.create_customer") create_customer
 
 > Create a new customer
 
@@ -529,7 +526,7 @@ result = customers_client.create_customer(body)
 ```
 
 
-#### <a name="get_all_customers"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_all_customers") get_all_customers
+### <a name="get_all_customers"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_all_customers") get_all_customers
 
 > Gets all customers under the platform
 
