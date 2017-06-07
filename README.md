@@ -13,12 +13,12 @@ This should display the version of the PIP Dependency Manager installed if your 
 * Using command line, navigate to the directory containing the generated files (including ```requirements.txt```) for the SDK.
 * Run the command ```pip install -r requirements.txt```. This should install all the required dependencies.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=Tangocard-Python)
+![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=Raas-Python)
 
 
 ## How to Use
 
-The following section explains how to use the Tangocard SDK package in a new project.
+The following section explains how to use the Raas SDK package in a new project.
 
 ### 1. Open Project in an IDE
 
@@ -28,17 +28,17 @@ Open up a Python IDE like PyCharm. The basic workflow presented here is also app
 
 Click on ```Open``` in PyCharm to browse to your generated SDK directory and then click ```OK```.
 
-![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=Tangocard-Python)     
+![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=Raas-Python)     
 
 The project files will be displayed in the side bar as follows:
 
-![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=Tangocard-Python&projectName=tangocard)     
+![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=Raas-Python&projectName=raas)     
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=Tangocard-Python&projectName=tangocard)
+![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=Raas-Python&projectName=raas)
 
 Name the directory as "test"
 
@@ -46,7 +46,7 @@ Name the directory as "test"
    
 Add a python file to this project with the name "testsdk"
 
-![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=Tangocard-Python&projectName=tangocard)
+![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=Raas-Python&projectName=raas)
 
 Name it "testsdk"
 
@@ -55,10 +55,10 @@ Name it "testsdk"
 In your python file you will be required to import the generated python library using the following code lines
 
 ```Python
-from tangocard.tangocard_client.py import *
+from raas.raas_client.py import *
 ```
 
-![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=Tangocard-Python&libraryName=tangocard.tangocard_client.py&projectName=tangocard)
+![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=Raas-Python&libraryName=raas.raas_client.py&projectName=raas)
 
 After this you can write code to instantiate an API client object, get a controller object and  make API calls. Sample code is given in the subsequent sections.
 
@@ -66,7 +66,7 @@ After this you can write code to instantiate an API client object, get a control
 
 To run the file within your test project, right click on your Python file inside your Test project and click on ```Run```
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=Tangocard-Python&libraryName=tangocard.tangocard_client.py&projectName=tangocard)
+![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=Raas-Python&libraryName=raas.raas_client.py&projectName=raas)
 
 
 ## How to Test
@@ -98,7 +98,7 @@ API client can be initialized as following.
 platform_name = "QAPlatform2" # RaaS v2 API Platform Name
 platform_key = "apYPfT6HNONpDRUj3CLGWYt7gvIHONpDRUYPfT6Hj" # RaaS v2 API Platform Key
 
-client = TangocardClient(platform_name, platform_key)
+client = RaasClient(platform_name, platform_key)
 ```
 
 # Class Reference
@@ -359,10 +359,10 @@ collect['start_date'] = start_date
 end_date = datetime.now()
 collect['end_date'] = end_date
 
-elements_per_block = 58
+elements_per_block = 113
 collect['elements_per_block'] = elements_per_block
 
-page = 58
+page = 113
 collect['page'] = page
 
 
