@@ -10,7 +10,6 @@ import logging
 from .base_controller import BaseController
 from ..api_helper import APIHelper
 from ..configuration import Configuration
-from ..http.auth.basic_auth import BasicAuth
 from ..models.system_status_response_model import SystemStatusResponseModel
 
 class StatusController(BaseController):

@@ -31,18 +31,18 @@ class ItemModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "utid" : "utid",
-        "reward_name" : "rewardName",
-        "currency_code" : "currencyCode",
-        "status" : "status",
-        "value_type" : "valueType",
-        "reward_type" : "rewardType",
-        "created_date" : "createdDate",
-        "last_update_date" : "lastUpdateDate",
-        "countries" : "countries",
-        "min_value" : "minValue",
-        "max_value" : "maxValue",
-        "face_value" : "faceValue"
+        "utid":'utid',
+        "reward_name":'rewardName',
+        "currency_code":'currencyCode',
+        "status":'status',
+        "value_type":'valueType',
+        "reward_type":'rewardType',
+        "created_date":'createdDate',
+        "last_update_date":'lastUpdateDate',
+        "countries":'countries',
+        "min_value":'minValue',
+        "max_value":'maxValue',
+        "face_value":'faceValue'
     }
 
     def __init__(self,
@@ -93,18 +93,18 @@ class ItemModel(object):
             return None
 
         # Extract variables from the dictionary
-        utid = dictionary.get("utid")
-        reward_name = dictionary.get("rewardName")
-        currency_code = dictionary.get("currencyCode")
-        status = dictionary.get("status")
-        value_type = dictionary.get("valueType")
-        reward_type = dictionary.get("rewardType")
+        utid = dictionary.get('utid')
+        reward_name = dictionary.get('rewardName')
+        currency_code = dictionary.get('currencyCode')
+        status = dictionary.get('status')
+        value_type = dictionary.get('valueType')
+        reward_type = dictionary.get('rewardType')
         created_date = APIHelper.RFC3339DateTime.from_value(dictionary.get("createdDate")).datetime if dictionary.get("createdDate") else None
         last_update_date = APIHelper.RFC3339DateTime.from_value(dictionary.get("lastUpdateDate")).datetime if dictionary.get("lastUpdateDate") else None
-        countries = dictionary.get("countries")
-        min_value = dictionary.get("minValue")
-        max_value = dictionary.get("maxValue")
-        face_value = dictionary.get("faceValue")
+        countries = dictionary.get('countries')
+        min_value = dictionary.get('minValue')
+        max_value = dictionary.get('maxValue')
+        face_value = dictionary.get('faceValue')
 
         # Return an object of this model
         return cls(utid,

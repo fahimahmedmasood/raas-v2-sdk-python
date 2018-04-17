@@ -24,11 +24,11 @@ class CurrencyBreakdownModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "currency_code" : "currencyCode",
-        "exchange_rate" : "exchangeRate",
-        "fee" : "fee",
-        "total" : "total",
-        "value" : "value"
+        "currency_code":'currencyCode',
+        "exchange_rate":'exchangeRate',
+        "fee":'fee',
+        "total":'total',
+        "value":'value'
     }
 
     def __init__(self,
@@ -65,11 +65,11 @@ class CurrencyBreakdownModel(object):
             return None
 
         # Extract variables from the dictionary
-        currency_code = dictionary.get("currencyCode")
-        exchange_rate = dictionary.get("exchangeRate")
-        fee = dictionary.get("fee")
-        total = dictionary.get("total")
-        value = dictionary.get("value")
+        currency_code = dictionary.get('currencyCode')
+        exchange_rate = dictionary.get('exchangeRate')
+        fee = dictionary.get('fee')
+        total = dictionary.get('total')
+        value = dictionary.get('value')
 
         # Return an object of this model
         return cls(currency_code,

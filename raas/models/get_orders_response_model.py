@@ -22,8 +22,8 @@ class GetOrdersResponseModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "page" : "page",
-        "orders" : "orders"
+        "page":'page',
+        "orders":'orders'
     }
 
     def __init__(self,
@@ -54,11 +54,11 @@ class GetOrdersResponseModel(object):
             return None
 
         # Extract variables from the dictionary
-        page = raas.models.page_model.PageModel.from_dictionary(dictionary.get("page")) if dictionary.get("page") else None
+        page = raas.models.page_model.PageModel.from_dictionary(dictionary.get('page')) if dictionary.get('page') else None
         orders = None
-        if dictionary.get("orders") != None:
+        if dictionary.get('orders') != None:
             orders = list()
-            for structure in dictionary.get("orders"):
+            for structure in dictionary.get('orders'):
                 orders.append(raas.models.order_model.OrderModel.from_dictionary(structure))
 
         # Return an object of this model

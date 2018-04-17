@@ -1,46 +1,46 @@
 # -*- coding: utf-8 -*-
 
 """
-    raas.models.account_summary_model
+    raas.models.deposit_request_model
 
     This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0 ( https://apimatic.io )
 """
-from raas.api_helper import APIHelper
 
-class AccountSummaryModel(object):
 
-    """Implementation of the 'AccountSummary' model.
+class DepositRequestModel(object):
 
-    Account Summary Model
+    """Implementation of the 'DepositRequest' model.
+
+    Fund Account Request
 
     Attributes:
-        account_identifier (string): Account Identifier
-        display_name (string): Display Name
-        created_at (datetime): Date Created
-        status (string): Status
+        customer_identifier (string): TODO: type description here.
+        account_identifier (string): TODO: type description here.
+        credit_card_token (string): TODO: type description here.
+        amount (float): TODO: type description here.
 
     """
 
     # Create a mapping from Model property names to API property names
     _names = {
+        "customer_identifier":'customerIdentifier',
         "account_identifier":'accountIdentifier',
-        "display_name":'displayName',
-        "created_at":'createdAt',
-        "status":'status'
+        "credit_card_token":'creditCardToken',
+        "amount":'amount'
     }
 
     def __init__(self,
+                 customer_identifier=None,
                  account_identifier=None,
-                 display_name=None,
-                 created_at=None,
-                 status=None):
-        """Constructor for the AccountSummaryModel class"""
+                 credit_card_token=None,
+                 amount=None):
+        """Constructor for the DepositRequestModel class"""
 
         # Initialize members of the class
+        self.customer_identifier = customer_identifier
         self.account_identifier = account_identifier
-        self.display_name = display_name
-        self.created_at = APIHelper.RFC3339DateTime(created_at) if created_at else None
-        self.status = status
+        self.credit_card_token = credit_card_token
+        self.amount = amount
 
 
     @classmethod
@@ -61,15 +61,15 @@ class AccountSummaryModel(object):
             return None
 
         # Extract variables from the dictionary
+        customer_identifier = dictionary.get('customerIdentifier')
         account_identifier = dictionary.get('accountIdentifier')
-        display_name = dictionary.get('displayName')
-        created_at = APIHelper.RFC3339DateTime.from_value(dictionary.get("createdAt")).datetime if dictionary.get("createdAt") else None
-        status = dictionary.get('status')
+        credit_card_token = dictionary.get('creditCardToken')
+        amount = dictionary.get('amount')
 
         # Return an object of this model
-        return cls(account_identifier,
-                   display_name,
-                   created_at,
-                   status)
+        return cls(customer_identifier,
+                   account_identifier,
+                   credit_card_token,
+                   amount)
 
 

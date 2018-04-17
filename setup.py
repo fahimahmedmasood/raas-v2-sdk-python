@@ -9,8 +9,8 @@ except(IOError, ImportError):
 
 setup(
     name='raas',
-    version='1.1.0',
-    description='With this RESTful API you can integrate a global reward or incentive program into your app or platform. If you have any questions or if you'd like to receive your own credentials, please contact us at devsupport@tangocard.com.',
+    version='1.3.5',
+    description='With this RESTful API you can integrate a global reward or incentive program into your app or platform. If you have any questions or if you\'d like to receive your own credentials, please contact us at devsupport@tangocard.com.',
     long_description=long_description,
     author='APIMatic SDK Generator',
     author_email='support@apimatic.io',
@@ -21,9 +21,5 @@ setup(
         'jsonpickle>=0.7.1, <1.0',
         'cachecontrol>=0.11.7, <1.0',
         'python-dateutil>=2.5.3, <3.0'
-    ],
-    tests_require=[
-        'nose>=1.3.7'
-    ],
-    test_suite = 'nose.collector'
+    ]
 )

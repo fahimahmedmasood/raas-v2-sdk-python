@@ -21,4 +21,13 @@ __all__ = [
     'exchange_rate_model',
     'page_model',
     'raas_client_error_model',
+    'credit_card_model',
+    'create_credit_card_request_model',
+    'new_credit_card_model',
+    'billing_address_model',
+    'unregister_credit_card_request_model',
+    'unregister_credit_card_response_model',
+    'deposit_request_model',
+    'deposit_response_model',
+    'get_deposit_response_model',
 ]

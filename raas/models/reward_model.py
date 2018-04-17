@@ -23,9 +23,9 @@ class RewardModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "credentials" : "credentials",
-        "credential_list" : "credentialList",
-        "redemption_instructions" : "redemptionInstructions"
+        "credentials":'credentials',
+        "credential_list":'credentialList',
+        "redemption_instructions":'redemptionInstructions'
     }
 
     def __init__(self,
@@ -58,13 +58,13 @@ class RewardModel(object):
             return None
 
         # Extract variables from the dictionary
-        credentials = dictionary.get("credentials")
+        credentials = dictionary.get('credentials')
         credential_list = None
-        if dictionary.get("credentialList") != None:
+        if dictionary.get('credentialList') != None:
             credential_list = list()
-            for structure in dictionary.get("credentialList"):
+            for structure in dictionary.get('credentialList'):
                 credential_list.append(raas.models.reward_credential_model.RewardCredentialModel.from_dictionary(structure))
-        redemption_instructions = dictionary.get("redemptionInstructions")
+        redemption_instructions = dictionary.get('redemptionInstructions')
 
         # Return an object of this model
         return cls(credentials,

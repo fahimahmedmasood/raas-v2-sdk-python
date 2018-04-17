@@ -1,46 +1,43 @@
 # -*- coding: utf-8 -*-
 
 """
-    raas.models.page_model
+    raas.models.new_credit_card_model
 
     This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0 ( https://apimatic.io )
 """
 
 
-class PageModel(object):
+class NewCreditCardModel(object):
 
-    """Implementation of the 'Page' model.
+    """Implementation of the 'NewCreditCard' model.
 
-    Model for pagination information
+    New Credit Card
 
     Attributes:
-        number (int): Page Number
-        elements_per_block (int): Elements per page
-        result_count (int): Result Count
-        total_count (int): Total Count
+        number (string): card number
+        expiration (string): card expiration date in YYYY-MM format
+        verification_number (string): 3 or 4 digit card security code on the
+            back of card
 
     """
 
     # Create a mapping from Model property names to API property names
     _names = {
         "number":'number',
-        "elements_per_block":'elementsPerBlock',
-        "result_count":'resultCount',
-        "total_count":'totalCount'
+        "expiration":'expiration',
+        "verification_number":'verificationNumber'
     }
 
     def __init__(self,
                  number=None,
-                 elements_per_block=None,
-                 result_count=None,
-                 total_count=None):
-        """Constructor for the PageModel class"""
+                 expiration=None,
+                 verification_number=None):
+        """Constructor for the NewCreditCardModel class"""
 
         # Initialize members of the class
         self.number = number
-        self.elements_per_block = elements_per_block
-        self.result_count = result_count
-        self.total_count = total_count
+        self.expiration = expiration
+        self.verification_number = verification_number
 
 
     @classmethod
@@ -62,14 +59,12 @@ class PageModel(object):
 
         # Extract variables from the dictionary
         number = dictionary.get('number')
-        elements_per_block = dictionary.get('elementsPerBlock')
-        result_count = dictionary.get('resultCount')
-        total_count = dictionary.get('totalCount')
+        expiration = dictionary.get('expiration')
+        verification_number = dictionary.get('verificationNumber')
 
         # Return an object of this model
         return cls(number,
-                   elements_per_block,
-                   result_count,
-                   total_count)
+                   expiration,
+                   verification_number)
 
 

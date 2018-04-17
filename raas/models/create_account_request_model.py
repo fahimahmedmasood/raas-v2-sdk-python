@@ -22,9 +22,9 @@ class CreateAccountRequestModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "account_identifier" : "accountIdentifier",
-        "display_name" : "displayName",
-        "contact_email" : "contactEmail"
+        "account_identifier":'accountIdentifier',
+        "display_name":'displayName',
+        "contact_email":'contactEmail'
     }
 
     def __init__(self,
@@ -57,9 +57,9 @@ class CreateAccountRequestModel(object):
             return None
 
         # Extract variables from the dictionary
-        account_identifier = dictionary.get("accountIdentifier")
-        display_name = dictionary.get("displayName")
-        contact_email = dictionary.get("contactEmail")
+        account_identifier = dictionary.get('accountIdentifier')
+        display_name = dictionary.get('displayName')
+        contact_email = dictionary.get('contactEmail')
 
         # Return an object of this model
         return cls(account_identifier,

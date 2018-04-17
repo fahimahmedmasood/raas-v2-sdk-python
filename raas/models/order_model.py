@@ -40,24 +40,24 @@ class OrderModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "account_identifier" : "accountIdentifier",
-        "amount_charged" : "amountCharged",
-        "created_at" : "createdAt",
-        "customer_identifier" : "customerIdentifier",
-        "denomination" : "denomination",
-        "reference_order_id" : "referenceOrderID",
-        "reward" : "reward",
-        "reward_name" : "rewardName",
-        "send_email" : "sendEmail",
-        "status" : "status",
-        "utid" : "utid",
-        "campaign" : "campaign",
-        "email_subject" : "emailSubject",
-        "external_ref_id" : "externalRefID",
-        "message" : "message",
-        "notes" : "notes",
-        "recipient" : "recipient",
-        "sender" : "sender"
+        "account_identifier":'accountIdentifier',
+        "amount_charged":'amountCharged',
+        "created_at":'createdAt',
+        "customer_identifier":'customerIdentifier',
+        "denomination":'denomination',
+        "reference_order_id":'referenceOrderID',
+        "reward":'reward',
+        "reward_name":'rewardName',
+        "send_email":'sendEmail',
+        "status":'status',
+        "utid":'utid',
+        "campaign":'campaign',
+        "email_subject":'emailSubject',
+        "external_ref_id":'externalRefID',
+        "message":'message',
+        "notes":'notes',
+        "recipient":'recipient',
+        "sender":'sender'
     }
 
     def __init__(self,
@@ -120,24 +120,24 @@ class OrderModel(object):
             return None
 
         # Extract variables from the dictionary
-        account_identifier = dictionary.get("accountIdentifier")
-        amount_charged = raas.models.currency_breakdown_model.CurrencyBreakdownModel.from_dictionary(dictionary.get("amountCharged")) if dictionary.get("amountCharged") else None
+        account_identifier = dictionary.get('accountIdentifier')
+        amount_charged = raas.models.currency_breakdown_model.CurrencyBreakdownModel.from_dictionary(dictionary.get('amountCharged')) if dictionary.get('amountCharged') else None
         created_at = APIHelper.RFC3339DateTime.from_value(dictionary.get("createdAt")).datetime if dictionary.get("createdAt") else None
-        customer_identifier = dictionary.get("customerIdentifier")
-        denomination = raas.models.currency_breakdown_model.CurrencyBreakdownModel.from_dictionary(dictionary.get("denomination")) if dictionary.get("denomination") else None
-        reference_order_id = dictionary.get("referenceOrderID")
-        reward = raas.models.reward_model.RewardModel.from_dictionary(dictionary.get("reward")) if dictionary.get("reward") else None
-        reward_name = dictionary.get("rewardName")
-        send_email = dictionary.get("sendEmail")
-        status = dictionary.get("status")
-        utid = dictionary.get("utid")
-        campaign = dictionary.get("campaign")
-        email_subject = dictionary.get("emailSubject")
-        external_ref_id = dictionary.get("externalRefID")
-        message = dictionary.get("message")
-        notes = dictionary.get("notes")
-        recipient = raas.models.name_email_model.NameEmailModel.from_dictionary(dictionary.get("recipient")) if dictionary.get("recipient") else None
-        sender = raas.models.name_email_model.NameEmailModel.from_dictionary(dictionary.get("sender")) if dictionary.get("sender") else None
+        customer_identifier = dictionary.get('customerIdentifier')
+        denomination = raas.models.currency_breakdown_model.CurrencyBreakdownModel.from_dictionary(dictionary.get('denomination')) if dictionary.get('denomination') else None
+        reference_order_id = dictionary.get('referenceOrderID')
+        reward = raas.models.reward_model.RewardModel.from_dictionary(dictionary.get('reward')) if dictionary.get('reward') else None
+        reward_name = dictionary.get('rewardName')
+        send_email = dictionary.get('sendEmail')
+        status = dictionary.get('status')
+        utid = dictionary.get('utid')
+        campaign = dictionary.get('campaign')
+        email_subject = dictionary.get('emailSubject')
+        external_ref_id = dictionary.get('externalRefID')
+        message = dictionary.get('message')
+        notes = dictionary.get('notes')
+        recipient = raas.models.name_email_model.NameEmailModel.from_dictionary(dictionary.get('recipient')) if dictionary.get('recipient') else None
+        sender = raas.models.name_email_model.NameEmailModel.from_dictionary(dictionary.get('sender')) if dictionary.get('sender') else None
 
         # Return an object of this model
         return cls(account_identifier,

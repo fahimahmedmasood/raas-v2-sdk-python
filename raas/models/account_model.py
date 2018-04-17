@@ -26,13 +26,13 @@ class AccountModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "account_identifier" : "accountIdentifier",
-        "display_name" : "displayName",
-        "currency_code" : "currencyCode",
-        "current_balance" : "currentBalance",
-        "created_at" : "createdAt",
-        "status" : "status",
-        "contact_email" : "contactEmail"
+        "account_identifier":'accountIdentifier',
+        "display_name":'displayName',
+        "currency_code":'currencyCode',
+        "current_balance":'currentBalance',
+        "created_at":'createdAt',
+        "status":'status',
+        "contact_email":'contactEmail'
     }
 
     def __init__(self,
@@ -73,13 +73,13 @@ class AccountModel(object):
             return None
 
         # Extract variables from the dictionary
-        account_identifier = dictionary.get("accountIdentifier")
-        display_name = dictionary.get("displayName")
+        account_identifier = dictionary.get('accountIdentifier')
+        display_name = dictionary.get('displayName')
         currency_code = dictionary.get("currencyCode") if dictionary.get("currencyCode") else 'USD'
-        current_balance = dictionary.get("currentBalance")
+        current_balance = dictionary.get('currentBalance')
         created_at = APIHelper.RFC3339DateTime.from_value(dictionary.get("createdAt")).datetime if dictionary.get("createdAt") else None
-        status = dictionary.get("status")
-        contact_email = dictionary.get("contactEmail")
+        status = dictionary.get('status')
+        contact_email = dictionary.get('contactEmail')
 
         # Return an object of this model
         return cls(account_identifier,

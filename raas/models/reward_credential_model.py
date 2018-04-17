@@ -22,9 +22,9 @@ class RewardCredentialModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "label" : "label",
-        "value" : "value",
-        "mtype" : "type"
+        "label":'label',
+        "value":'value',
+        "mtype":'type'
     }
 
     def __init__(self,
@@ -57,9 +57,9 @@ class RewardCredentialModel(object):
             return None
 
         # Extract variables from the dictionary
-        label = dictionary.get("label")
-        value = dictionary.get("value")
-        mtype = dictionary.get("type")
+        label = dictionary.get('label')
+        value = dictionary.get('value')
+        mtype = dictionary.get('type')
 
         # Return an object of this model
         return cls(label,

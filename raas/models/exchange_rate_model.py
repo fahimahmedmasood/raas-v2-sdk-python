@@ -23,10 +23,10 @@ class ExchangeRateModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "last_modified_date" : "lastModifiedDate",
-        "reward_currency" : "rewardCurrency",
-        "base_currency" : "baseCurrency",
-        "base_fx" : "baseFx"
+        "last_modified_date":'lastModifiedDate',
+        "reward_currency":'rewardCurrency',
+        "base_currency":'baseCurrency',
+        "base_fx":'baseFx'
     }
 
     def __init__(self,
@@ -62,9 +62,9 @@ class ExchangeRateModel(object):
 
         # Extract variables from the dictionary
         last_modified_date = APIHelper.RFC3339DateTime.from_value(dictionary.get("lastModifiedDate")).datetime if dictionary.get("lastModifiedDate") else None
-        reward_currency = dictionary.get("rewardCurrency")
-        base_currency = dictionary.get("baseCurrency")
-        base_fx = dictionary.get("baseFx")
+        reward_currency = dictionary.get('rewardCurrency')
+        base_currency = dictionary.get('baseCurrency')
+        base_fx = dictionary.get('baseFx')
 
         # Return an object of this model
         return cls(last_modified_date,

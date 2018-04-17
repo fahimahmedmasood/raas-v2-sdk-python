@@ -21,8 +21,8 @@ class CatalogModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "catalog_name" : "catalogName",
-        "brands" : "brands"
+        "catalog_name":'catalogName',
+        "brands":'brands'
     }
 
     def __init__(self,
@@ -53,11 +53,11 @@ class CatalogModel(object):
             return None
 
         # Extract variables from the dictionary
-        catalog_name = dictionary.get("catalogName")
+        catalog_name = dictionary.get('catalogName')
         brands = None
-        if dictionary.get("brands") != None:
+        if dictionary.get('brands') != None:
             brands = list()
-            for structure in dictionary.get("brands"):
+            for structure in dictionary.get('brands'):
                 brands.append(raas.models.brand_model.BrandModel.from_dictionary(structure))
 
         # Return an object of this model

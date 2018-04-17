@@ -81,6 +81,4 @@ class Configuration(object):
             String: The base URI.
 
         """
-        parameters = {
-        }
-        return APIHelper.append_url_with_template_parameters(cls.environments[cls.environment][server], parameters)
+        return cls.environments[cls.environment][server]

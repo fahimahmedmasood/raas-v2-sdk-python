@@ -6,23 +6,26 @@
     This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0 ( https://apimatic.io ).
 """
 from .decorators import lazy_property
-from .controllers.accounts_controller import AccountsController
+from .configuration import Configuration
 from .controllers.orders_controller import OrdersController
+from .controllers.accounts_controller import AccountsController
 from .controllers.catalog_controller import CatalogController
 from .controllers.exchange_rates_controller import ExchangeRatesController
 from .controllers.status_controller import StatusController
 from .controllers.customers_controller import CustomersController
-from .configuration import Configuration
+from .controllers.fund_controller import FundController
 
 class RaasClient(object):
 
-    @lazy_property
-    def accounts(self):
-        return AccountsController()
+    config = Configuration
 
     @lazy_property
     def orders(self):
         return OrdersController()
+
+    @lazy_property
+    def accounts(self):
+        return AccountsController()
 
     @lazy_property
     def catalog(self):
@@ -39,6 +42,10 @@ class RaasClient(object):
     @lazy_property
     def customers(self):
         return CustomersController()
+
+    @lazy_property
+    def fund(self):
+        return FundController()
 
 
     def __init__(self, 

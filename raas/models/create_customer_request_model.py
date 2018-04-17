@@ -21,8 +21,8 @@ class CreateCustomerRequestModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "customer_identifier" : "customerIdentifier",
-        "display_name" : "displayName"
+        "customer_identifier":'customerIdentifier',
+        "display_name":'displayName'
     }
 
     def __init__(self,
@@ -53,8 +53,8 @@ class CreateCustomerRequestModel(object):
             return None
 
         # Extract variables from the dictionary
-        customer_identifier = dictionary.get("customerIdentifier")
-        display_name = dictionary.get("displayName")
+        customer_identifier = dictionary.get('customerIdentifier')
+        display_name = dictionary.get('displayName')
 
         # Return an object of this model
         return cls(customer_identifier,

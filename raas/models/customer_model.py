@@ -25,11 +25,11 @@ class CustomerModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "customer_identifier" : "customerIdentifier",
-        "display_name" : "displayName",
-        "status" : "status",
-        "created_at" : "createdAt",
-        "accounts" : "accounts"
+        "customer_identifier":'customerIdentifier',
+        "display_name":'displayName',
+        "status":'status',
+        "created_at":'createdAt',
+        "accounts":'accounts'
     }
 
     def __init__(self,
@@ -66,14 +66,14 @@ class CustomerModel(object):
             return None
 
         # Extract variables from the dictionary
-        customer_identifier = dictionary.get("customerIdentifier")
-        display_name = dictionary.get("displayName")
-        status = dictionary.get("status")
+        customer_identifier = dictionary.get('customerIdentifier')
+        display_name = dictionary.get('displayName')
+        status = dictionary.get('status')
         created_at = APIHelper.RFC3339DateTime.from_value(dictionary.get("createdAt")).datetime if dictionary.get("createdAt") else None
         accounts = None
-        if dictionary.get("accounts") != None:
+        if dictionary.get('accounts') != None:
             accounts = list()
-            for structure in dictionary.get("accounts"):
+            for structure in dictionary.get('accounts'):
                 accounts.append(raas.models.account_summary_model.AccountSummaryModel.from_dictionary(structure))
 
         # Return an object of this model

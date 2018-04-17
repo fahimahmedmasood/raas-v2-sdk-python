@@ -31,17 +31,17 @@ class BrandModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "brand_key" : "brandKey",
-        "brand_name" : "brandName",
-        "disclaimer" : "disclaimer",
-        "description" : "description",
-        "short_description" : "shortDescription",
-        "terms" : "terms",
-        "created_date" : "createdDate",
-        "last_update_date" : "lastUpdateDate",
-        "image_urls" : "imageUrls",
-        "status" : "status",
-        "items" : "items"
+        "brand_key":'brandKey',
+        "brand_name":'brandName',
+        "disclaimer":'disclaimer',
+        "description":'description',
+        "short_description":'shortDescription',
+        "terms":'terms',
+        "created_date":'createdDate',
+        "last_update_date":'lastUpdateDate',
+        "image_urls":'imageUrls',
+        "status":'status',
+        "items":'items'
     }
 
     def __init__(self,
@@ -90,20 +90,20 @@ class BrandModel(object):
             return None
 
         # Extract variables from the dictionary
-        brand_key = dictionary.get("brandKey")
-        brand_name = dictionary.get("brandName")
-        disclaimer = dictionary.get("disclaimer")
-        description = dictionary.get("description")
-        short_description = dictionary.get("shortDescription")
-        terms = dictionary.get("terms")
+        brand_key = dictionary.get('brandKey')
+        brand_name = dictionary.get('brandName')
+        disclaimer = dictionary.get('disclaimer')
+        description = dictionary.get('description')
+        short_description = dictionary.get('shortDescription')
+        terms = dictionary.get('terms')
         created_date = APIHelper.RFC3339DateTime.from_value(dictionary.get("createdDate")).datetime if dictionary.get("createdDate") else None
         last_update_date = APIHelper.RFC3339DateTime.from_value(dictionary.get("lastUpdateDate")).datetime if dictionary.get("lastUpdateDate") else None
-        image_urls = dictionary.get("imageUrls")
-        status = dictionary.get("status")
+        image_urls = dictionary.get('imageUrls')
+        status = dictionary.get('status')
         items = None
-        if dictionary.get("items") != None:
+        if dictionary.get('items') != None:
             items = list()
-            for structure in dictionary.get("items"):
+            for structure in dictionary.get('items'):
                 items.append(raas.models.item_model.ItemModel.from_dictionary(structure))
 
         # Return an object of this model

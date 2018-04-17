@@ -21,8 +21,8 @@ class ExchangeRateResponseModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "disclaimer" : "disclaimer",
-        "exchange_rates" : "exchangeRates"
+        "disclaimer":'disclaimer',
+        "exchange_rates":'exchangeRates'
     }
 
     def __init__(self,
@@ -53,11 +53,11 @@ class ExchangeRateResponseModel(object):
             return None
 
         # Extract variables from the dictionary
-        disclaimer = dictionary.get("disclaimer")
+        disclaimer = dictionary.get('disclaimer')
         exchange_rates = None
-        if dictionary.get("exchangeRates") != None:
+        if dictionary.get('exchangeRates') != None:
             exchange_rates = list()
-            for structure in dictionary.get("exchangeRates"):
+            for structure in dictionary.get('exchangeRates'):
                 exchange_rates.append(raas.models.exchange_rate_model.ExchangeRateModel.from_dictionary(structure))
 
         # Return an object of this model

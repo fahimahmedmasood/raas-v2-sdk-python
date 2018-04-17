@@ -21,8 +21,8 @@ class ResendOrderResponseModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "created_at" : "createdAt",
-        "id" : "id"
+        "created_at":'createdAt',
+        "id":'id'
     }
 
     def __init__(self,
@@ -54,7 +54,7 @@ class ResendOrderResponseModel(object):
 
         # Extract variables from the dictionary
         created_at = APIHelper.RFC3339DateTime.from_value(dictionary.get("createdAt")).datetime if dictionary.get("createdAt") else None
-        id = dictionary.get("id")
+        id = dictionary.get('id')
 
         # Return an object of this model
         return cls(created_at,

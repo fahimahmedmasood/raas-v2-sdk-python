@@ -1,46 +1,42 @@
 # -*- coding: utf-8 -*-
 
 """
-    raas.models.raas_client_error_model
+    raas.models.unregister_credit_card_response_model
 
     This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0 ( https://apimatic.io )
 """
+from raas.api_helper import APIHelper
 
+class UnregisterCreditCardResponseModel(object):
 
-class RaasClientErrorModel(object):
+    """Implementation of the 'UnregisterCreditCardResponse' model.
 
-    """Implementation of the 'RaasClientError' model.
-
-    RaaS 4xx Error
+    Unregister Credit Card Response
 
     Attributes:
-        path (string): Error Path
-        message (string): Error Message
-        constraint (string): Constraint
-        invalid_value (string): Invalid Value
+        created_date (datetime): TODO: type description here.
+        message (string): TODO: type description here.
+        token (string): TODO: type description here.
 
     """
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "path":'path',
+        "created_date":'createdDate',
         "message":'message',
-        "constraint":'constraint',
-        "invalid_value":'invalidValue'
+        "token":'token'
     }
 
     def __init__(self,
-                 path=None,
+                 created_date=None,
                  message=None,
-                 constraint=None,
-                 invalid_value=None):
-        """Constructor for the RaasClientErrorModel class"""
+                 token=None):
+        """Constructor for the UnregisterCreditCardResponseModel class"""
 
         # Initialize members of the class
-        self.path = path
+        self.created_date = APIHelper.RFC3339DateTime(created_date) if created_date else None
         self.message = message
-        self.constraint = constraint
-        self.invalid_value = invalid_value
+        self.token = token
 
 
     @classmethod
@@ -61,15 +57,13 @@ class RaasClientErrorModel(object):
             return None
 
         # Extract variables from the dictionary
-        path = dictionary.get('path')
+        created_date = APIHelper.RFC3339DateTime.from_value(dictionary.get("createdDate")).datetime if dictionary.get("createdDate") else None
         message = dictionary.get('message')
-        constraint = dictionary.get('constraint')
-        invalid_value = dictionary.get('invalidValue')
+        token = dictionary.get('token')
 
         # Return an object of this model
-        return cls(path,
+        return cls(created_date,
                    message,
-                   constraint,
-                   invalid_value)
+                   token)
 
 

@@ -31,18 +31,18 @@ class CreateOrderRequestModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "account_identifier" : "accountIdentifier",
-        "amount" : "amount",
-        "customer_identifier" : "customerIdentifier",
-        "send_email" : "sendEmail",
-        "utid" : "utid",
-        "campaign" : "campaign",
-        "email_subject" : "emailSubject",
-        "external_ref_id" : "externalRefID",
-        "message" : "message",
-        "recipient" : "recipient",
-        "sender" : "sender",
-        "notes" : "notes"
+        "account_identifier":'accountIdentifier',
+        "amount":'amount',
+        "customer_identifier":'customerIdentifier',
+        "send_email":'sendEmail',
+        "utid":'utid',
+        "campaign":'campaign',
+        "email_subject":'emailSubject',
+        "external_ref_id":'externalRefID',
+        "message":'message',
+        "recipient":'recipient',
+        "sender":'sender',
+        "notes":'notes'
     }
 
     def __init__(self,
@@ -93,18 +93,18 @@ class CreateOrderRequestModel(object):
             return None
 
         # Extract variables from the dictionary
-        account_identifier = dictionary.get("accountIdentifier")
-        amount = dictionary.get("amount")
-        customer_identifier = dictionary.get("customerIdentifier")
-        send_email = dictionary.get("sendEmail")
-        utid = dictionary.get("utid")
-        campaign = dictionary.get("campaign")
-        email_subject = dictionary.get("emailSubject")
-        external_ref_id = dictionary.get("externalRefID")
-        message = dictionary.get("message")
-        recipient = raas.models.name_email_model.NameEmailModel.from_dictionary(dictionary.get("recipient")) if dictionary.get("recipient") else None
-        sender = raas.models.name_email_model.NameEmailModel.from_dictionary(dictionary.get("sender")) if dictionary.get("sender") else None
-        notes = dictionary.get("notes")
+        account_identifier = dictionary.get('accountIdentifier')
+        amount = dictionary.get('amount')
+        customer_identifier = dictionary.get('customerIdentifier')
+        send_email = dictionary.get('sendEmail')
+        utid = dictionary.get('utid')
+        campaign = dictionary.get('campaign')
+        email_subject = dictionary.get('emailSubject')
+        external_ref_id = dictionary.get('externalRefID')
+        message = dictionary.get('message')
+        recipient = raas.models.name_email_model.NameEmailModel.from_dictionary(dictionary.get('recipient')) if dictionary.get('recipient') else None
+        sender = raas.models.name_email_model.NameEmailModel.from_dictionary(dictionary.get('sender')) if dictionary.get('sender') else None
+        notes = dictionary.get('notes')
 
         # Return an object of this model
         return cls(account_identifier,

@@ -21,8 +21,8 @@ class RaasServerErrorModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "message" : "message",
-        "code" : "code"
+        "message":'message',
+        "code":'code'
     }
 
     def __init__(self,
@@ -53,8 +53,8 @@ class RaasServerErrorModel(object):
             return None
 
         # Extract variables from the dictionary
-        message = dictionary.get("message")
-        code = dictionary.get("code")
+        message = dictionary.get('message')
+        code = dictionary.get('code')
 
         # Return an object of this model
         return cls(message,

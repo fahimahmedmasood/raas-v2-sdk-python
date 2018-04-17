@@ -106,6 +106,8 @@ class BaseController(object):
             raise RaasClientException('Forbidden', context)
         elif context.response.status_code == 404:
             raise RaasGenericException('Not Found', context)
+        elif context.response.status_code == 409:
+            raise RaasClientException('Conflict', context)
         elif context.response.status_code == 500:
             raise RaasServerException('Internal Server Error - Retry Later', context)
         elif context.response.status_code == 503:

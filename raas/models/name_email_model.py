@@ -22,9 +22,9 @@ class NameEmailModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "email" : "email",
-        "first_name" : "firstName",
-        "last_name" : "lastName"
+        "email":'email',
+        "first_name":'firstName',
+        "last_name":'lastName'
     }
 
     def __init__(self,
@@ -57,9 +57,9 @@ class NameEmailModel(object):
             return None
 
         # Extract variables from the dictionary
-        email = dictionary.get("email")
-        first_name = dictionary.get("firstName")
-        last_name = dictionary.get("lastName")
+        email = dictionary.get('email')
+        first_name = dictionary.get('firstName')
+        last_name = dictionary.get('lastName')
 
         # Return an object of this model
         return cls(email,
