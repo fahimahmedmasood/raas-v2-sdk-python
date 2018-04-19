@@ -11,10 +11,10 @@ class SystemStatusResponseModel(object):
 
     """Implementation of the 'SystemStatusResponse' model.
 
-    System Status Response Model
+    Represents the response returned from the status endpoint
 
     Attributes:
-        status (string): System Status
+        status (string): The status of the system
 
     """
 

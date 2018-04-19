@@ -11,11 +11,12 @@ class ExchangeRateResponseModel(object):
 
     """Implementation of the 'ExchangeRateResponse' model.
 
-    Exchange Rate Response Model
+    Represents the response from the get exchange rates call
 
     Attributes:
-        disclaimer (string): Disclaimer
-        exchange_rates (list of ExchangeRateModel): Exchange Rates
+        disclaimer (string): A disclaimer about the exchange rates returned
+        exchange_rates (list of ExchangeRateModel): An array of ExchangeRate
+            objects
 
     """
 

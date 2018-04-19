@@ -11,15 +11,15 @@ class DepositResponseModel(object):
 
     """Implementation of the 'DepositResponse' model.
 
-    Fund Account Response
+    Represents the response from a place deposit call
 
     Attributes:
-        amount (float): TODO: type description here.
-        amount_charged (float): TODO: type description here.
-        created_date (datetime): TODO: type description here.
-        fee_percent (float): TODO: type description here.
-        reference_deposit_id (string): TODO: type description here.
-        status (string): TODO: type description here.
+        amount (float): The funding amount
+        amount_charged (float): The amount charged, after fees
+        created_date (datetime): The date the transaction was created
+        fee_percent (float): The processing fee percentage
+        reference_deposit_id (string): The deposit reference id
+        status (string): The status of the transaction
 
     """
 

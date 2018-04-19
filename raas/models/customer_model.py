@@ -12,14 +12,15 @@ class CustomerModel(object):
 
     """Implementation of the 'Customer' model.
 
-    Customer Model
+    Represents a Customer/Group
 
     Attributes:
-        customer_identifier (string): Customer Identifier
-        display_name (string): Display Name
-        status (string): Status
-        created_at (datetime): Date Created
-        accounts (list of AccountSummaryModel): Accounts
+        customer_identifier (string): The customer identifier
+        display_name (string): The display name
+        status (string): The status of the customer
+        created_at (datetime): The date the customer was created
+        accounts (list of AccountSummaryModel): An array of AccountSummary
+            objects
 
     """
 

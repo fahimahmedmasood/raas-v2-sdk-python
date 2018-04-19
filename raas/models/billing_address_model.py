@@ -11,18 +11,18 @@ class BillingAddressModel(object):
 
     """Implementation of the 'BillingAddress' model.
 
-    Billing Address
+    Represents a Billing Address
 
     Attributes:
-        first_name (string): TODO: type description here.
-        last_name (string): TODO: type description here.
-        address_line_1 (string): TODO: type description here.
-        city (string): TODO: type description here.
-        state (string): TODO: type description here.
-        postal_code (string): TODO: type description here.
-        country (string): 2-letter country code
-        email_address (string): billing email address
-        address_line_2 (string): TODO: type description here.
+        first_name (string): The first name
+        last_name (string): The last name
+        address_line_1 (string): The address
+        city (string): The city
+        state (string): The state/province
+        postal_code (string): The postal code
+        country (string): The 2-letter country code
+        email_address (string): The billing contact's email address
+        address_line_2 (string): An optional second address line
 
     """
 

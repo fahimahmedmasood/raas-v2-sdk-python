@@ -11,11 +11,11 @@ class CreateCustomerRequestModel(object):
 
     """Implementation of the 'CreateCustomerRequest' model.
 
-    Create Customer Request
+    Represents the request to create a customer
 
     Attributes:
-        customer_identifier (string): Customer Identifier
-        display_name (string): Display Name
+        customer_identifier (string): The customer identifier
+        display_name (string): The display name
 
     """
 

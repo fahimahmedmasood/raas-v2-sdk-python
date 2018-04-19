@@ -88,8 +88,8 @@ In order to setup authentication and initialization of the API client, you need 
 
 | Parameter | Description |
 |-----------|-------------|
-| platform_name | RaaS v2 API Platform Name |
-| platform_key | RaaS v2 API Platform Key |
+| platform_name | Platform Name (Provided by Tango Card) |
+| platform_key | Platform Key (Provided by Tango Card) |
 
 
 
@@ -97,8 +97,8 @@ API client can be initialized as following.
 
 ```python
 # Configuration parameters and credentials
-platform_name = 'QAPlatform2' # RaaS v2 API Platform Name
-platform_key = 'apYPfT6HNONpDRUj3CLGWYt7gvIHONpDRUYPfT6Hj' # RaaS v2 API Platform Key
+platform_name = 'QAPlatform2' # Platform Name (Provided by Tango Card)
+platform_key = 'apYPfT6HNONpDRUj3CLGWYt7gvIHONpDRUYPfT6Hj' # Platform Key (Provided by Tango Card)
 
 client = RaasClient(platform_name, platform_key)
 ```
@@ -109,158 +109,49 @@ client = RaasClient(platform_name, platform_key)
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [OrdersController](#orders_controller)
-* [AccountsController](#accounts_controller)
-* [CatalogController](#catalog_controller)
-* [ExchangeRatesController](#exchange_rates_controller)
 * [StatusController](#status_controller)
-* [CustomersController](#customers_controller)
+* [AccountsController](#accounts_controller)
+* [OrdersController](#orders_controller)
 * [FundController](#fund_controller)
+* [ExchangeRatesController](#exchange_rates_controller)
+* [CustomersController](#customers_controller)
+* [CatalogController](#catalog_controller)
 
-## <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OrdersController") OrdersController
+## <a name="status_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StatusController") StatusController
 
 ### Get controller instance
 
-An instance of the ``` OrdersController ``` class can be accessed from the API Client.
+An instance of the ``` StatusController ``` class can be accessed from the API Client.
 
 ```python
- orders_controller = client.orders
+ status_controller = client.status
 ```
 
-### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.create_order") create_order
+### <a name="get_system_status"></a>![Method: ](https://apidocs.io/img/method.png ".StatusController.get_system_status") get_system_status
 
-> TODO: Add a method description
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Retrieves system status
 
 ```python
-def create_order(self,
-                     body)
+def get_system_status(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 #### Example Usage
 
 ```python
-body = CreateOrderRequestModel()
 
-result = orders_controller.create_order(body)
-
-```
-
-
-### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.get_order") get_order
-
-> TODO: Add a method description
-
-```python
-def get_order(self,
-                  reference_order_id)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| referenceOrderID |  ``` Required ```  | Reference Order ID |
-
-
-
-#### Example Usage
-
-```python
-reference_order_id = 'referenceOrderID'
-
-result = orders_controller.get_order(reference_order_id)
+result = status_controller.get_system_status()
 
 ```
 
+#### Errors
 
-### <a name="get_orders"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.get_orders") get_orders
-
-> TODO: Add a method description
-
-```python
-def get_orders(self,
-                   options=dict())
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| accountIdentifier |  ``` Optional ```  | TODO: Add a parameter description |
-| customerIdentifier |  ``` Optional ```  | TODO: Add a parameter description |
-| externalRefID |  ``` Optional ```  | TODO: Add a parameter description |
-| startDate |  ``` Optional ```  | TODO: Add a parameter description |
-| endDate |  ``` Optional ```  | TODO: Add a parameter description |
-| elementsPerBlock |  ``` Optional ```  | TODO: Add a parameter description |
-| page |  ``` Optional ```  | TODO: Add a parameter description |
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
 
 
-
-#### Example Usage
-
-```python
-collect = {}
-
-account_identifier = 'accountIdentifier'
-collect['account_identifier'] = account_identifier
-
-customer_identifier = 'customerIdentifier'
-collect['customer_identifier'] = customer_identifier
-
-external_ref_id = 'externalRefID'
-collect['external_ref_id'] = external_ref_id
-
-start_date = datetime.now()
-collect['start_date'] = start_date
-
-end_date = datetime.now()
-collect['end_date'] = end_date
-
-elements_per_block = 152
-collect['elements_per_block'] = elements_per_block
-
-page = 152
-collect['page'] = page
-
-
-result = orders_controller.get_orders(collect)
-
-```
-
-
-### <a name="create_resend_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.create_resend_order") create_resend_order
-
-> TODO: Add a method description
-
-```python
-def create_resend_order(self,
-                            reference_order_id)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| referenceOrderID |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-reference_order_id = 'referenceOrderID'
-
-result = orders_controller.create_resend_order(reference_order_id)
-
-```
 
 
 [Back to List of Controllers](#list_of_controllers)
@@ -275,36 +166,9 @@ An instance of the ``` AccountsController ``` class can be accessed from the API
  accounts_controller = client.accounts
 ```
 
-### <a name="get_account"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.get_account") get_account
-
-> Get an account
-
-```python
-def get_account(self,
-                    account_identifier)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| accountIdentifier |  ``` Required ```  | Account Identifier |
-
-
-
-#### Example Usage
-
-```python
-account_identifier = 'accountIdentifier'
-
-result = accounts_controller.get_account(account_identifier)
-
-```
-
-
 ### <a name="get_accounts_by_customer"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.get_accounts_by_customer") get_accounts_by_customer
 
-> Gets a list of accounts for a given customer
+> Retrieves a list of accounts for a given customer
 
 ```python
 def get_accounts_by_customer(self,
@@ -328,10 +192,18 @@ result = accounts_controller.get_accounts_by_customer(customer_identifier)
 
 ```
 
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
 
 ### <a name="create_account"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.create_account") create_account
 
-> Create an account under a given customer
+> Creates an account under a given customer
 
 ```python
 def create_account(self,
@@ -358,10 +230,18 @@ result = accounts_controller.create_account(customer_identifier, body)
 
 ```
 
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
 
 ### <a name="get_all_accounts"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.get_all_accounts") get_all_accounts
 
-> Gets all accounts under the platform
+> Retrieves all accounts under the platform
 
 ```python
 def get_all_accounts(self)
@@ -375,34 +255,440 @@ result = accounts_controller.get_all_accounts()
 
 ```
 
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
+
+### <a name="get_account"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.get_account") get_account
+
+> Retrieves a single account
+
+```python
+def get_account(self,
+                    account_identifier)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| accountIdentifier |  ``` Required ```  | Account Identifier |
+
+
+
+#### Example Usage
+
+```python
+account_identifier = 'accountIdentifier'
+
+result = accounts_controller.get_account(account_identifier)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="catalog_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CatalogController") CatalogController
+## <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OrdersController") OrdersController
 
 ### Get controller instance
 
-An instance of the ``` CatalogController ``` class can be accessed from the API Client.
+An instance of the ``` OrdersController ``` class can be accessed from the API Client.
 
 ```python
- catalog_controller = client.catalog
+ orders_controller = client.orders
 ```
 
-### <a name="get_catalog"></a>![Method: ](https://apidocs.io/img/method.png ".CatalogController.get_catalog") get_catalog
+### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.get_order") get_order
 
-> Get Catalog
+> Retrieves a single order
 
 ```python
-def get_catalog(self)
+def get_order(self,
+                  reference_order_id)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| referenceOrderID |  ``` Required ```  | Reference Order ID |
+
+
+
+#### Example Usage
+
+```python
+reference_order_id = 'referenceOrderID'
+
+result = orders_controller.get_order(reference_order_id)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
+
+### <a name="create_resend_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.create_resend_order") create_resend_order
+
+> Resends an order
+
+```python
+def create_resend_order(self,
+                            reference_order_id)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| referenceOrderID |  ``` Required ```  | The order's reference order id |
+
+
+
+#### Example Usage
+
+```python
+reference_order_id = 'referenceOrderID'
+
+result = orders_controller.create_resend_order(reference_order_id)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
+
+### <a name="get_orders"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.get_orders") get_orders
+
+> Retrieves a list of orders under a platform
+
+```python
+def get_orders(self,
+                   options=dict())
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| accountIdentifier |  ``` Optional ```  | Account identifier |
+| customerIdentifier |  ``` Optional ```  | Customer identifier |
+| externalRefID |  ``` Optional ```  | External reference id |
+| startDate |  ``` Optional ```  | The start date |
+| endDate |  ``` Optional ```  | The end date |
+| elementsPerBlock |  ``` Optional ```  | The number of elements per page |
+| page |  ``` Optional ```  | The page number to return |
+
+
+
+#### Example Usage
+
+```python
+collect = {}
+
+account_identifier = 'accountIdentifier'
+collect['account_identifier'] = account_identifier
+
+customer_identifier = 'customerIdentifier'
+collect['customer_identifier'] = customer_identifier
+
+external_ref_id = 'externalRefID'
+collect['external_ref_id'] = external_ref_id
+
+start_date = datetime.now()
+collect['start_date'] = start_date
+
+end_date = datetime.now()
+collect['end_date'] = end_date
+
+elements_per_block = 12
+collect['elements_per_block'] = elements_per_block
+
+page = 12
+collect['page'] = page
+
+
+result = orders_controller.get_orders(collect)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
+
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.create_order") create_order
+
+> Places an order
+
+```python
+def create_order(self,
+                     body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | A CreateOrderRequest object |
+
+
+
+#### Example Usage
+
+```python
+body = CreateOrderRequestModel()
+
+result = orders_controller.create_order(body)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="fund_controller"></a>![Class: ](https://apidocs.io/img/class.png ".FundController") FundController
+
+### Get controller instance
+
+An instance of the ``` FundController ``` class can be accessed from the API Client.
+
+```python
+ fund_controller = client.fund
+```
+
+### <a name="create_unregister_credit_card"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.create_unregister_credit_card") create_unregister_credit_card
+
+> Unregister a credit card
+
+```python
+def create_unregister_credit_card(self,
+                                      body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = UnregisterCreditCardRequestModel()
+
+result = fund_controller.create_unregister_credit_card(body)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
+
+### <a name="get_deposit"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.get_deposit") get_deposit
+
+> Get details for a specific credit card deposit
+
+```python
+def get_deposit(self,
+                    deposit_id)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| depositId |  ``` Required ```  | The reference deposit id |
+
+
+
+#### Example Usage
+
+```python
+deposit_id = 'depositId'
+
+result = fund_controller.get_deposit(deposit_id)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
+
+### <a name="create_deposit"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.create_deposit") create_deposit
+
+> Funds an account via credit card
+
+```python
+def create_deposit(self,
+                       body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = DepositRequestModel()
+
+result = fund_controller.create_deposit(body)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
+
+### <a name="get_credit_cards"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.get_credit_cards") get_credit_cards
+
+> Retrieves all credit cards registered on the platform
+
+```python
+def get_credit_cards(self)
 ```
 
 #### Example Usage
 
 ```python
 
-result = catalog_controller.get_catalog()
+result = fund_controller.get_credit_cards()
 
 ```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
+
+### <a name="get_credit_card"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.get_credit_card") get_credit_card
+
+> Retrieves details for a single credit card
+
+```python
+def get_credit_card(self,
+                        token)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| token |  ``` Required ```  | Credit Card Token |
+
+
+
+#### Example Usage
+
+```python
+token = 'token'
+
+result = fund_controller.get_credit_card(token)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
+
+### <a name="create_credit_card"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.create_credit_card") create_credit_card
+
+> Registers a new credit card
+
+```python
+def create_credit_card(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | A CreateCreditCardRequest object |
+
+
+
+#### Example Usage
+
+```python
+body = CreateCreditCardRequestModel()
+
+result = fund_controller.create_credit_card(body)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
 
 
 [Back to List of Controllers](#list_of_controllers)
@@ -433,36 +719,13 @@ result = exchange_rates_controller.get_exchange_rates()
 
 ```
 
+#### Errors
 
-[Back to List of Controllers](#list_of_controllers)
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
 
-## <a name="status_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StatusController") StatusController
 
-### Get controller instance
-
-An instance of the ``` StatusController ``` class can be accessed from the API Client.
-
-```python
- status_controller = client.status
-```
-
-### <a name="get_system_status"></a>![Method: ](https://apidocs.io/img/method.png ".StatusController.get_system_status") get_system_status
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Retrieve system status
-
-```python
-def get_system_status(self)
-```
-
-#### Example Usage
-
-```python
-
-result = status_controller.get_system_status()
-
-```
 
 
 [Back to List of Controllers](#list_of_controllers)
@@ -477,36 +740,9 @@ An instance of the ``` CustomersController ``` class can be accessed from the AP
  customers_controller = client.customers
 ```
 
-### <a name="get_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_customer") get_customer
-
-> Get a customer
-
-```python
-def get_customer(self,
-                     customer_identifier)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerIdentifier |  ``` Required ```  | Customer Identifier |
-
-
-
-#### Example Usage
-
-```python
-customer_identifier = 'customerIdentifier'
-
-result = customers_controller.get_customer(customer_identifier)
-
-```
-
-
 ### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.create_customer") create_customer
 
-> Create a new customer
+> Creates a new customer
 
 ```python
 def create_customer(self,
@@ -530,10 +766,18 @@ result = customers_controller.create_customer(body)
 
 ```
 
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
 
 ### <a name="get_all_customers"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_all_customers") get_all_customers
 
-> Gets all customers under the platform
+> Retrieves all customers under the platform
 
 ```python
 def get_all_customers(self)
@@ -547,169 +791,85 @@ result = customers_controller.get_all_customers()
 
 ```
 
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
+
+### <a name="get_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_customer") get_customer
+
+> Retrieves a single customer
+
+```python
+def get_customer(self,
+                     customer_identifier)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerIdentifier |  ``` Required ```  | Customer Identifier |
+
+
+
+#### Example Usage
+
+```python
+customer_identifier = 'customerIdentifier'
+
+result = customers_controller.get_customer(customer_identifier)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
+
+
+
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="fund_controller"></a>![Class: ](https://apidocs.io/img/class.png ".FundController") FundController
+## <a name="catalog_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CatalogController") CatalogController
 
 ### Get controller instance
 
-An instance of the ``` FundController ``` class can be accessed from the API Client.
+An instance of the ``` CatalogController ``` class can be accessed from the API Client.
 
 ```python
- fund_controller = client.fund
+ catalog_controller = client.catalog
 ```
 
-### <a name="get_credit_cards"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.get_credit_cards") get_credit_cards
+### <a name="get_catalog"></a>![Method: ](https://apidocs.io/img/method.png ".CatalogController.get_catalog") get_catalog
 
-> List all credit cards registered on this platform
+> Retrieves a platform's catalog
 
 ```python
-def get_credit_cards(self)
+def get_catalog(self)
 ```
 
 #### Example Usage
 
 ```python
 
-result = fund_controller.get_credit_cards()
+result = catalog_controller.get_catalog()
 
 ```
 
+#### Errors
 
-### <a name="create_credit_card"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.create_credit_card") create_credit_card
-
-> Register a new credit card
-
-```python
-def create_credit_card(self,
-                           body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | API Error |
 
 
-
-#### Example Usage
-
-```python
-body = CreateCreditCardRequestModel()
-
-result = fund_controller.create_credit_card(body)
-
-```
-
-
-### <a name="create_unregister_credit_card"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.create_unregister_credit_card") create_unregister_credit_card
-
-> Unregister a credit card
-
-```python
-def create_unregister_credit_card(self,
-                                      body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = UnregisterCreditCardRequestModel()
-
-result = fund_controller.create_unregister_credit_card(body)
-
-```
-
-
-### <a name="create_deposit"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.create_deposit") create_deposit
-
-> Fund an account
-
-```python
-def create_deposit(self,
-                       body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = DepositRequestModel()
-
-result = fund_controller.create_deposit(body)
-
-```
-
-
-### <a name="get_deposit"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.get_deposit") get_deposit
-
-> Get details for a specific credit card deposit
-
-```python
-def get_deposit(self,
-                    deposit_id)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| depositId |  ``` Required ```  | Deposit ID |
-
-
-
-#### Example Usage
-
-```python
-deposit_id = 'depositId'
-
-result = fund_controller.get_deposit(deposit_id)
-
-```
-
-
-### <a name="get_credit_card"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.get_credit_card") get_credit_card
-
-> Get details for a specific credit card
-
-```python
-def get_credit_card(self,
-                        token)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| token |  ``` Required ```  | Card Token |
-
-
-
-#### Example Usage
-
-```python
-token = 'token'
-
-result = fund_controller.get_credit_card(token)
-
-```
 
 
 [Back to List of Controllers](#list_of_controllers)

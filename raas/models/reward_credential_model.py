@@ -11,12 +11,12 @@ class RewardCredentialModel(object):
 
     """Implementation of the 'RewardCredential' model.
 
-    Reward Credential Model
+    Represents a Reward Credential
 
     Attributes:
-        label (string): Credential Label
-        value (string): Credential Value
-        mtype (string): Credential Type
+        label (string): The label of the credential
+        value (string): The actual credential
+        mtype (string): The type of the credential
 
     """
 

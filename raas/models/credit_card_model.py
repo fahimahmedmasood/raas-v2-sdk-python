@@ -6,23 +6,28 @@
     This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0 ( https://apimatic.io )
 """
 from raas.api_helper import APIHelper
+import raas.models.full_name_email_model
 
 class CreditCardModel(object):
 
     """Implementation of the 'CreditCard' model.
 
-    Credit Card
+    Represents a Credit Card
 
     Attributes:
-        customer_identifier (string): TODO: type description here.
-        account_identifier (string): TODO: type description here.
-        token (string): TODO: type description here.
-        label (string): TODO: type description here.
-        last_four_digits (string): TODO: type description here.
-        expiration_date (string): TODO: type description here.
-        status (string): TODO: type description here.
-        created_date (datetime): TODO: type description here.
-        activation_date (datetime): TODO: type description here.
+        customer_identifier (string): The customer identifier
+        account_identifier (string): The account identifier
+        token (string): The credit card token
+        label (string): The label/nickname for the credit card
+        last_four_digits (string): The last four digits of the credit card
+            number
+        expiration_date (string): The credit card's expiration date
+        status (string): The status of the credit card
+        created_date (datetime): The date the card was added
+        activation_date (datetime): The date the card will be available for
+            use
+        contact_information (list of FullNameEmailModel): An optional array of
+            FullNameEmail objects
 
     """
 
@@ -36,7 +41,8 @@ class CreditCardModel(object):
         "expiration_date":'expirationDate',
         "status":'status',
         "created_date":'createdDate',
-        "activation_date":'activationDate'
+        "activation_date":'activationDate',
+        "contact_information":'contactInformation'
     }
 
     def __init__(self,
@@ -48,7 +54,8 @@ class CreditCardModel(object):
                  expiration_date=None,
                  status=None,
                  created_date=None,
-                 activation_date=None):
+                 activation_date=None,
+                 contact_information=None):
         """Constructor for the CreditCardModel class"""
 
         # Initialize members of the class
@@ -61,6 +68,7 @@ class CreditCardModel(object):
         self.status = status
         self.created_date = APIHelper.RFC3339DateTime(created_date) if created_date else None
         self.activation_date = APIHelper.RFC3339DateTime(activation_date) if activation_date else None
+        self.contact_information = contact_information
 
 
     @classmethod
@@ -90,6 +98,11 @@ class CreditCardModel(object):
         status = dictionary.get('status')
         created_date = APIHelper.RFC3339DateTime.from_value(dictionary.get("createdDate")).datetime if dictionary.get("createdDate") else None
         activation_date = APIHelper.RFC3339DateTime.from_value(dictionary.get("activationDate")).datetime if dictionary.get("activationDate") else None
+        contact_information = None
+        if dictionary.get('contactInformation') != None:
+            contact_information = list()
+            for structure in dictionary.get('contactInformation'):
+                contact_information.append(raas.models.full_name_email_model.FullNameEmailModel.from_dictionary(structure))
 
         # Return an object of this model
         return cls(customer_identifier,
@@ -100,6 +113,7 @@ class CreditCardModel(object):
                    expiration_date,
                    status,
                    created_date,
-                   activation_date)
+                   activation_date,
+                   contact_information)
 
 

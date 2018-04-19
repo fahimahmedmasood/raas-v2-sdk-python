@@ -11,12 +11,12 @@ class NameEmailModel(object):
 
     """Implementation of the 'NameEmail' model.
 
-    Name and Email Model
+    Represents a name and an email address
 
     Attributes:
-        email (string): Email Address
-        first_name (string): First Name
-        last_name (string): Last Name
+        email (string): An email address
+        first_name (string): A first name
+        last_name (string): A last name
 
     """
 

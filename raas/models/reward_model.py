@@ -11,7 +11,7 @@ class RewardModel(object):
 
     """Implementation of the 'Reward' model.
 
-    Reward Model
+    Represents a Reward
 
     Attributes:
         credentials (dict<object, string>): A map of reward credentials

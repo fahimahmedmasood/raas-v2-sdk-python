@@ -11,13 +11,13 @@ class RaasClientErrorModel(object):
 
     """Implementation of the 'RaasClientError' model.
 
-    RaaS 4xx Error
+    Represents a RaaS 4xx Error
 
     Attributes:
-        path (string): Error Path
-        message (string): Error Message
-        constraint (string): Constraint
-        invalid_value (string): Invalid Value
+        path (string): The path to the invalid value
+        message (string): The error message
+        constraint (string): The constraint validated
+        invalid_value (string): The value that was invalid
 
     """
 

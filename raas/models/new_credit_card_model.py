@@ -11,13 +11,14 @@ class NewCreditCardModel(object):
 
     """Implementation of the 'NewCreditCard' model.
 
-    New Credit Card
+    Represents the credit card information required to register a credit card
 
     Attributes:
-        number (string): card number
-        expiration (string): card expiration date in YYYY-MM format
-        verification_number (string): 3 or 4 digit card security code on the
-            back of card
+        number (string): The credit card number
+        expiration (string): The credit card expiration date in YYYY-MM
+            format
+        verification_number (string): The 3 or 4 digit card security code on
+            the back of card
 
     """
 

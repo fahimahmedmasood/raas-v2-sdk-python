@@ -11,21 +11,24 @@ class ItemModel(object):
 
     """Implementation of the 'Item' model.
 
-    Item Model
+    Represents an item
 
     Attributes:
-        utid (string): UTID
-        reward_name (string): Reward Name
-        currency_code (string): Currency Code
-        status (string): Status
-        value_type (string): Value Type (fixed/variable)
-        reward_type (string): Reward Type
-        created_date (datetime): Date Created
-        last_update_date (datetime): Last Updated
-        countries (list of string): Countries
-        min_value (float): Minimum Value (for variable value items)
-        max_value (float): Maximum Value (for variable value items)
-        face_value (float): Face Value
+        utid (string): The UTID
+        reward_name (string): The reward name
+        currency_code (string): The currency code
+        status (string): The item's status
+        value_type (string): The item's value type (VARIABLE_VALUE or
+            FIXED_VALUE)
+        reward_type (string): The reward type
+        created_date (datetime): The date the item was created
+        last_update_date (datetime): The date the item was last updated
+        countries (list of string): The countries this item is valid in
+        min_value (float): The minimum orderable value (for variable value
+            items)
+        max_value (float): The maximum orderable value (for variable value
+            items)
+        face_value (float): The face value of the gift card
 
     """
 

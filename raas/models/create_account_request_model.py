@@ -11,12 +11,12 @@ class CreateAccountRequestModel(object):
 
     """Implementation of the 'CreateAccountRequest' model.
 
-    Create Account Request
+    Represents the request to create an account
 
     Attributes:
-        account_identifier (string): Account Identifier
-        display_name (string): Display Name
-        contact_email (string): Contact Email
+        account_identifier (string): The account identifier
+        display_name (string): The display name
+        contact_email (string): The contact email
 
     """
 

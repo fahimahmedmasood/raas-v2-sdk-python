@@ -12,20 +12,20 @@ class BrandModel(object):
 
     """Implementation of the 'Brand' model.
 
-    Brand Model
+    Represents a Brand
 
     Attributes:
-        brand_key (string): Brand Key
-        brand_name (string): Brand Name
-        disclaimer (string): Disclaimer
-        description (string): Description
-        short_description (string): Short Description
-        terms (string): Terms
-        created_date (datetime): Date Created
-        last_update_date (datetime): Last Updated
-        image_urls (dict<object, string>): Image URLs
-        status (string): Status
-        items (list of ItemModel): Items
+        brand_key (string): The brand key
+        brand_name (string): The brand name
+        disclaimer (string): The brand's disclaimer
+        description (string): The brand's description
+        short_description (string): The brand's short description
+        terms (string): The brand's terms
+        created_date (datetime): The date the brand was created
+        last_update_date (datetime): The date the brand was last updated
+        image_urls (dict<object, string>): A map of Image URLs
+        status (string): The brand's status
+        items (list of ItemModel): An array of Item objects
 
     """
 

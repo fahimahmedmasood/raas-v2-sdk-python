@@ -11,22 +11,24 @@ class AccountModel(object):
 
     """Implementation of the 'Account' model.
 
-    Account Model
+    Represents an Account
 
     Attributes:
-        account_identifier (string): Account Identifier
-        display_name (string): Display Name
-        currency_code (string): Currency Code
-        current_balance (float): Current Balance
-        created_at (datetime): Date Created
-        status (string): Status
-        contact_email (string): Contact Email
+        account_identifier (string): An account identifier
+        account_number (string): An account number
+        display_name (string): A display name
+        currency_code (string): The currency code for the account
+        current_balance (float): The current balance of the account
+        created_at (datetime): The date the account was created
+        status (string): The status of the account
+        contact_email (string): The contact email on file for the account
 
     """
 
     # Create a mapping from Model property names to API property names
     _names = {
         "account_identifier":'accountIdentifier',
+        "account_number":'accountNumber',
         "display_name":'displayName',
         "currency_code":'currencyCode',
         "current_balance":'currentBalance',
@@ -37,6 +39,7 @@ class AccountModel(object):
 
     def __init__(self,
                  account_identifier=None,
+                 account_number=None,
                  display_name=None,
                  currency_code='USD',
                  current_balance=None,
@@ -47,6 +50,7 @@ class AccountModel(object):
 
         # Initialize members of the class
         self.account_identifier = account_identifier
+        self.account_number = account_number
         self.display_name = display_name
         self.currency_code = currency_code
         self.current_balance = current_balance
@@ -74,6 +78,7 @@ class AccountModel(object):
 
         # Extract variables from the dictionary
         account_identifier = dictionary.get('accountIdentifier')
+        account_number = dictionary.get('accountNumber')
         display_name = dictionary.get('displayName')
         currency_code = dictionary.get("currencyCode") if dictionary.get("currencyCode") else 'USD'
         current_balance = dictionary.get('currentBalance')
@@ -83,6 +88,7 @@ class AccountModel(object):
 
         # Return an object of this model
         return cls(account_identifier,
+                   account_number,
                    display_name,
                    currency_code,
                    current_balance,

@@ -29,12 +29,12 @@ class BaseController(object):
 
     """
 
-    http_client = RequestsClient(timeout=15)
+    http_client = RequestsClient(timeout=60)
 
     http_call_back = None
 
     global_headers = {
-        'user-agent': 'TangoCardv2NGSDK'
+        'user-agent': 'V2NGSDK'
     }
 
     def __init__(self, client=None, call_back=None):

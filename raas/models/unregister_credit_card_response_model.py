@@ -11,12 +11,12 @@ class UnregisterCreditCardResponseModel(object):
 
     """Implementation of the 'UnregisterCreditCardResponse' model.
 
-    Unregister Credit Card Response
+    Represents the response from the unregister credit card call
 
     Attributes:
-        created_date (datetime): TODO: type description here.
-        message (string): TODO: type description here.
-        token (string): TODO: type description here.
+        created_date (datetime): The date the card was removed
+        message (string): A message describing the status of the card
+        token (string): The credit card token
 
     """
 

@@ -27,16 +27,10 @@ class Configuration(object):
 
     # An enum for SDK environments
     class Environment(object):
-        # Sandbox (Fake) Environment
+        # The sandbox environment does not use real money and can be used for testing.
         SANDBOX = 0
-        # Production (Live) Environment
+        # The production environment uses real money and is for live transactions.
         PRODUCTION = 1
-        # Tango Card Internal Use Only
-        QA = 2
-        # Tango Card Internal Use Only
-        GAMMA = 3
-        # Tango Card Internal Use Only
-        LOCAL = 4
 
     # An enum for API servers
     class Server(object):
@@ -45,10 +39,10 @@ class Configuration(object):
     # The environment in which the SDK is running
     environment = Environment.SANDBOX
 
-    # RaaS v2 API Platform Name
+    # Platform Name (Provided by Tango Card)
     platform_name = 'QAPlatform2'
 
-    # RaaS v2 API Platform Key
+    # Platform Key (Provided by Tango Card)
     platform_key = 'apYPfT6HNONpDRUj3CLGWYt7gvIHONpDRUYPfT6Hj'
 
     # All the environments the SDK can run in
@@ -58,15 +52,6 @@ class Configuration(object):
         },
         Environment.PRODUCTION: {
             Server.DEFAULT: 'https://api.tangocard.com/raas/v2',
-        },
-        Environment.QA: {
-            Server.DEFAULT: 'https://qa-api.tangocard.com/raas/v2',
-        },
-        Environment.GAMMA: {
-            Server.DEFAULT: 'https://gamma-api.tangocard.com/raas/v2',
-        },
-        Environment.LOCAL: {
-            Server.DEFAULT: 'http://raastango.cc:8080/v2',
         },
     }
 

@@ -7,20 +7,23 @@
 """
 import raas.models.new_credit_card_model
 import raas.models.billing_address_model
+import raas.models.full_name_email_model
 
 class CreateCreditCardRequestModel(object):
 
     """Implementation of the 'CreateCreditCardRequest' model.
 
-    Register Credit Card Request
+    Represents the request to register a credit card
 
     Attributes:
-        customer_identifier (string): TODO: type description here.
-        account_identifier (string): TODO: type description here.
-        label (string): TODO: type description here.
-        ip_address (string): TODO: type description here.
-        credit_card (NewCreditCardModel): TODO: type description here.
-        billing_address (BillingAddressModel): TODO: type description here.
+        customer_identifier (string): The customer identifier
+        account_identifier (string): The account identifier
+        label (string): The credit card's label/nickname
+        ip_address (string): The IP address of the user registering the card
+        credit_card (NewCreditCardModel): A NewCreditCard object
+        billing_address (BillingAddressModel): A BillingAddress object
+        contact_information (list of FullNameEmailModel): An optional array of
+            FullNameEmail objects
 
     """
 
@@ -31,7 +34,8 @@ class CreateCreditCardRequestModel(object):
         "label":'label',
         "ip_address":'ipAddress',
         "credit_card":'creditCard',
-        "billing_address":'billingAddress'
+        "billing_address":'billingAddress',
+        "contact_information":'contactInformation'
     }
 
     def __init__(self,
@@ -40,7 +44,8 @@ class CreateCreditCardRequestModel(object):
                  label=None,
                  ip_address=None,
                  credit_card=None,
-                 billing_address=None):
+                 billing_address=None,
+                 contact_information=None):
         """Constructor for the CreateCreditCardRequestModel class"""
 
         # Initialize members of the class
@@ -50,6 +55,7 @@ class CreateCreditCardRequestModel(object):
         self.ip_address = ip_address
         self.credit_card = credit_card
         self.billing_address = billing_address
+        self.contact_information = contact_information
 
 
     @classmethod
@@ -76,6 +82,11 @@ class CreateCreditCardRequestModel(object):
         ip_address = dictionary.get('ipAddress')
         credit_card = raas.models.new_credit_card_model.NewCreditCardModel.from_dictionary(dictionary.get('creditCard')) if dictionary.get('creditCard') else None
         billing_address = raas.models.billing_address_model.BillingAddressModel.from_dictionary(dictionary.get('billingAddress')) if dictionary.get('billingAddress') else None
+        contact_information = None
+        if dictionary.get('contactInformation') != None:
+            contact_information = list()
+            for structure in dictionary.get('contactInformation'):
+                contact_information.append(raas.models.full_name_email_model.FullNameEmailModel.from_dictionary(structure))
 
         # Return an object of this model
         return cls(customer_identifier,
@@ -83,6 +94,7 @@ class CreateCreditCardRequestModel(object):
                    label,
                    ip_address,
                    credit_card,
-                   billing_address)
+                   billing_address,
+                   contact_information)
 
 

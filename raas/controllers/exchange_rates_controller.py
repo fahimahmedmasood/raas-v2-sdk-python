@@ -12,6 +12,7 @@ from ..api_helper import APIHelper
 from ..configuration import Configuration
 from ..http.auth.basic_auth import BasicAuth
 from ..models.exchange_rate_response_model import ExchangeRateResponseModel
+from ..exceptions.raas_generic_exception import RaasGenericException
 
 class ExchangeRatesController(BaseController):
 
@@ -56,6 +57,11 @@ class ExchangeRatesController(BaseController):
             _request = self.http_client.get(_query_url, headers=_headers)
             BasicAuth.apply(_request)
             _context = self.execute_request(_request, name = 'get_exchange_rates')
+
+            # Endpoint and global error handling using HTTP status codes.
+            self.logger.info('Validating response for get_exchange_rates.')
+            if _context.response.status_code == 0:
+                raise RaasGenericException('API Error', _context)
             self.validate_response(_context)
     
             # Return appropriate type

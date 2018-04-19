@@ -11,13 +11,14 @@ class ExchangeRateModel(object):
 
     """Implementation of the 'ExchangeRate' model.
 
-    Exchange Rate Model
+    Represents an Exchange Rate
 
     Attributes:
-        last_modified_date (datetime): Last Modified
-        reward_currency (string): Reward Currency
-        base_currency (string): Base Currency
-        base_fx (float): Exchange Rate
+        last_modified_date (datetime): When the exchange rate was last
+            updated
+        reward_currency (string): The reward currency
+        base_currency (string): The base currency
+        base_fx (float): The exchange rate
 
     """
 

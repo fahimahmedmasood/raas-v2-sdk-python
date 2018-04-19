@@ -11,13 +11,13 @@ class PageModel(object):
 
     """Implementation of the 'Page' model.
 
-    Model for pagination information
+    Represents the pagination information returned in a paginated API call
 
     Attributes:
-        number (int): Page Number
-        elements_per_block (int): Elements per page
-        result_count (int): Result Count
-        total_count (int): Total Count
+        number (int): The page number
+        elements_per_block (int): The number of elements per page
+        result_count (int): The number of results returned
+        total_count (int): The total number of results
 
     """
 

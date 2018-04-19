@@ -11,6 +11,7 @@ from .base_controller import BaseController
 from ..api_helper import APIHelper
 from ..configuration import Configuration
 from ..models.system_status_response_model import SystemStatusResponseModel
+from ..exceptions.raas_generic_exception import RaasGenericException
 
 class StatusController(BaseController):
 
@@ -23,7 +24,7 @@ class StatusController(BaseController):
     def get_system_status(self):
         """Does a GET request to /pulse.
 
-        Retrieve system status
+        Retrieves system status
 
         Returns:
             SystemStatusResponseModel: Response from the API. 
@@ -54,6 +55,11 @@ class StatusController(BaseController):
             self.logger.info('Preparing and executing request for get_system_status.')
             _request = self.http_client.get(_query_url, headers=_headers)
             _context = self.execute_request(_request, name = 'get_system_status')
+
+            # Endpoint and global error handling using HTTP status codes.
+            self.logger.info('Validating response for get_system_status.')
+            if _context.response.status_code == 0:
+                raise RaasGenericException('API Error', _context)
             self.validate_response(_context)
     
             # Return appropriate type

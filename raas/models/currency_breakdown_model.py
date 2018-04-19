@@ -11,14 +11,14 @@ class CurrencyBreakdownModel(object):
 
     """Implementation of the 'CurrencyBreakdown' model.
 
-    Amount/Currency Breakdown
+    Represents a breakdown of an amount and currency information
 
     Attributes:
-        currency_code (string): Currency Code
-        exchange_rate (float): Exchange Rate
-        fee (float): Fee
-        total (float): Total
-        value (float): Value
+        currency_code (string): A 3 digit currency code
+        exchange_rate (float): The exchange rate
+        fee (float): The amount of the fee applied
+        total (float): The order total
+        value (float): The value of the order
 
     """
 

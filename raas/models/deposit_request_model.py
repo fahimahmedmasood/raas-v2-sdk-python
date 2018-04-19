@@ -11,13 +11,13 @@ class DepositRequestModel(object):
 
     """Implementation of the 'DepositRequest' model.
 
-    Fund Account Request
+    Represents the request to deposit funds via credit card
 
     Attributes:
-        customer_identifier (string): TODO: type description here.
-        account_identifier (string): TODO: type description here.
-        credit_card_token (string): TODO: type description here.
-        amount (float): TODO: type description here.
+        customer_identifier (string): The customer identifier
+        account_identifier (string): The account identifier
+        credit_card_token (string): The credit card token
+        amount (float): The amount to fund
 
     """
 

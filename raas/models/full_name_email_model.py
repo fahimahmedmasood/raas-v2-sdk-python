@@ -1,38 +1,38 @@
 # -*- coding: utf-8 -*-
 
 """
-    raas.models.catalog_model
+    raas.models.full_name_email_model
 
     This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0 ( https://apimatic.io )
 """
-import raas.models.brand_model
 
-class CatalogModel(object):
 
-    """Implementation of the 'Catalog' model.
+class FullNameEmailModel(object):
 
-    Represents a Catalog
+    """Implementation of the 'FullNameEmail' model.
+
+    Represents a full name and an email address
 
     Attributes:
-        catalog_name (string): The name of your catalog
-        brands (list of BrandModel): The brands in your catalog
+        full_name (string): The full name
+        email_address (string): The email address
 
     """
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "catalog_name":'catalogName',
-        "brands":'brands'
+        "full_name":'fullName',
+        "email_address":'emailAddress'
     }
 
     def __init__(self,
-                 catalog_name=None,
-                 brands=None):
-        """Constructor for the CatalogModel class"""
+                 full_name=None,
+                 email_address=None):
+        """Constructor for the FullNameEmailModel class"""
 
         # Initialize members of the class
-        self.catalog_name = catalog_name
-        self.brands = brands
+        self.full_name = full_name
+        self.email_address = email_address
 
 
     @classmethod
@@ -53,15 +53,11 @@ class CatalogModel(object):
             return None
 
         # Extract variables from the dictionary
-        catalog_name = dictionary.get('catalogName')
-        brands = None
-        if dictionary.get('brands') != None:
-            brands = list()
-            for structure in dictionary.get('brands'):
-                brands.append(raas.models.brand_model.BrandModel.from_dictionary(structure))
+        full_name = dictionary.get('fullName')
+        email_address = dictionary.get('emailAddress')
 
         # Return an object of this model
-        return cls(catalog_name,
-                   brands)
+        return cls(full_name,
+                   email_address)
 
 

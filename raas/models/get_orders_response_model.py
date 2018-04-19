@@ -6,17 +6,17 @@
     This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0 ( https://apimatic.io )
 """
 import raas.models.page_model
-import raas.models.order_model
+import raas.models.order_summary_model
 
 class GetOrdersResponseModel(object):
 
     """Implementation of the 'GetOrdersResponse' model.
 
-    Get Orders Response
+    Represents the response from the get orders call
 
     Attributes:
         page (PageModel): Pagination information
-        orders (list of OrderModel): An array of orders
+        orders (list of OrderSummaryModel): An array of orders
 
     """
 
@@ -59,7 +59,7 @@ class GetOrdersResponseModel(object):
         if dictionary.get('orders') != None:
             orders = list()
             for structure in dictionary.get('orders'):
-                orders.append(raas.models.order_model.OrderModel.from_dictionary(structure))
+                orders.append(raas.models.order_summary_model.OrderSummaryModel.from_dictionary(structure))
 
         # Return an object of this model
         return cls(page,

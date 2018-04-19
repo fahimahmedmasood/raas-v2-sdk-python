@@ -11,7 +11,7 @@ class ResendOrderResponseModel(object):
 
     """Implementation of the 'ResendOrderResponse' model.
 
-    Response for Resend Order Call
+    Represents the response returned from a resend order request
 
     Attributes:
         created_at (datetime): When the resend request was created

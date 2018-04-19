@@ -11,21 +11,23 @@ class CreateOrderRequestModel(object):
 
     """Implementation of the 'CreateOrderRequest' model.
 
-    Create Order Request
+    Represents the request to place an order
 
     Attributes:
-        account_identifier (string): Account Identifier
-        amount (float): Amount
-        customer_identifier (string): Customer Identifier
-        send_email (bool): Send Email
-        utid (string): UTID
-        campaign (string): Campaign
-        email_subject (string): Email Subject
-        external_ref_id (string): External Reference ID
-        message (string): Email Message
-        recipient (NameEmailModel): Recipient
-        sender (NameEmailModel): Sender
-        notes (string): Notes
+        account_identifier (string): The account identifier
+        amount (float): The order amount
+        customer_identifier (string): The customer identifier
+        send_email (bool): Indicates whether we should deliver this reward via
+            email
+        utid (string): The UTID
+        campaign (string): An optional campaign identifier
+        email_subject (string): The subject of the gift email
+        external_ref_id (string): An optional external reference id
+        message (string): The gift message in the email
+        recipient (NameEmailModel): The recipient's information
+        sender (NameEmailModel): Optional sender information
+        notes (string): Optional notes (not displayed to customer)
+        etid (string): The email template identifier
 
     """
 
@@ -42,7 +44,8 @@ class CreateOrderRequestModel(object):
         "message":'message',
         "recipient":'recipient',
         "sender":'sender',
-        "notes":'notes'
+        "notes":'notes',
+        "etid":'etid'
     }
 
     def __init__(self,
@@ -57,7 +60,8 @@ class CreateOrderRequestModel(object):
                  message=None,
                  recipient=None,
                  sender=None,
-                 notes=None):
+                 notes=None,
+                 etid=None):
         """Constructor for the CreateOrderRequestModel class"""
 
         # Initialize members of the class
@@ -73,6 +77,7 @@ class CreateOrderRequestModel(object):
         self.recipient = recipient
         self.sender = sender
         self.notes = notes
+        self.etid = etid
 
 
     @classmethod
@@ -105,6 +110,7 @@ class CreateOrderRequestModel(object):
         recipient = raas.models.name_email_model.NameEmailModel.from_dictionary(dictionary.get('recipient')) if dictionary.get('recipient') else None
         sender = raas.models.name_email_model.NameEmailModel.from_dictionary(dictionary.get('sender')) if dictionary.get('sender') else None
         notes = dictionary.get('notes')
+        etid = dictionary.get('etid')
 
         # Return an object of this model
         return cls(account_identifier,
@@ -118,6 +124,7 @@ class CreateOrderRequestModel(object):
                    message,
                    recipient,
                    sender,
-                   notes)
+                   notes,
+                   etid)
 
 

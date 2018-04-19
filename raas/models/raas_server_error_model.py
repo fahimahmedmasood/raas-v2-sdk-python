@@ -11,11 +11,11 @@ class RaasServerErrorModel(object):
 
     """Implementation of the 'RaasServerError' model.
 
-    RaaS 5xx Error
+    Represents a RaaS 5xx Error
 
     Attributes:
-        message (string): Error Message
-        code (int): Error Code
+        message (string): The error message
+        code (int): The RaaS error code
 
     """
 
