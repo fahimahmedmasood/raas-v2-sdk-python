@@ -424,10 +424,10 @@ collect['start_date'] = start_date
 end_date = datetime.now()
 collect['end_date'] = end_date
 
-elements_per_block = 22
+elements_per_block = 228
 collect['elements_per_block'] = elements_per_block
 
-page = 22
+page = 228
 collect['page'] = page
 
 
