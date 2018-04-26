@@ -144,8 +144,8 @@ class FundController(BaseController):
             self.logger.error(e, exc_info = True)
             raise
 
-    def create_deposit(self,
-                       body):
+    def add_funds(self,
+                  body):
         """Does a POST request to /creditCardDeposits.
 
         Funds an account via credit card
@@ -164,33 +164,33 @@ class FundController(BaseController):
 
         """
         try:
-            self.logger.info('create_deposit called.')
+            self.logger.info('add_funds called.')
     
             # Validate required parameters
-            self.logger.info('Validating required parameters for create_deposit.')
+            self.logger.info('Validating required parameters for add_funds.')
             self.validate_parameters(body=body)
     
             # Prepare query URL
-            self.logger.info('Preparing query URL for create_deposit.')
+            self.logger.info('Preparing query URL for add_funds.')
             _query_builder = Configuration.get_base_uri()
             _query_builder += '/creditCardDeposits'
             _query_url = APIHelper.clean_url(_query_builder)
     
             # Prepare headers
-            self.logger.info('Preparing headers for create_deposit.')
+            self.logger.info('Preparing headers for add_funds.')
             _headers = {
                 'accept': 'application/json',
                 'content-type': 'application/json; charset=utf-8'
             }
     
             # Prepare and execute request
-            self.logger.info('Preparing and executing request for create_deposit.')
+            self.logger.info('Preparing and executing request for add_funds.')
             _request = self.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(body))
             BasicAuth.apply(_request)
-            _context = self.execute_request(_request, name = 'create_deposit')
+            _context = self.execute_request(_request, name = 'add_funds')
 
             # Endpoint and global error handling using HTTP status codes.
-            self.logger.info('Validating response for create_deposit.')
+            self.logger.info('Validating response for add_funds.')
             if _context.response.status_code == 0:
                 raise RaasGenericException('API Error', _context)
             self.validate_response(_context)
@@ -311,8 +311,8 @@ class FundController(BaseController):
             self.logger.error(e, exc_info = True)
             raise
 
-    def create_credit_card(self,
-                           body):
+    def create_register_credit_card(self,
+                                    body):
         """Does a POST request to /creditCards.
 
         Registers a new credit card
@@ -332,33 +332,33 @@ class FundController(BaseController):
 
         """
         try:
-            self.logger.info('create_credit_card called.')
+            self.logger.info('create_register_credit_card called.')
     
             # Validate required parameters
-            self.logger.info('Validating required parameters for create_credit_card.')
+            self.logger.info('Validating required parameters for create_register_credit_card.')
             self.validate_parameters(body=body)
     
             # Prepare query URL
-            self.logger.info('Preparing query URL for create_credit_card.')
+            self.logger.info('Preparing query URL for create_register_credit_card.')
             _query_builder = Configuration.get_base_uri()
             _query_builder += '/creditCards'
             _query_url = APIHelper.clean_url(_query_builder)
     
             # Prepare headers
-            self.logger.info('Preparing headers for create_credit_card.')
+            self.logger.info('Preparing headers for create_register_credit_card.')
             _headers = {
                 'accept': 'application/json',
                 'content-type': 'application/json; charset=utf-8'
             }
     
             # Prepare and execute request
-            self.logger.info('Preparing and executing request for create_credit_card.')
+            self.logger.info('Preparing and executing request for create_register_credit_card.')
             _request = self.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(body))
             BasicAuth.apply(_request)
-            _context = self.execute_request(_request, name = 'create_credit_card')
+            _context = self.execute_request(_request, name = 'create_register_credit_card')
 
             # Endpoint and global error handling using HTTP status codes.
-            self.logger.info('Validating response for create_credit_card.')
+            self.logger.info('Validating response for create_register_credit_card.')
             if _context.response.status_code == 0:
                 raise RaasGenericException('API Error', _context)
             self.validate_response(_context)

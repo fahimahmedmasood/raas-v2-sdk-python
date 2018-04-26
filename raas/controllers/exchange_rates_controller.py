@@ -23,7 +23,7 @@ class ExchangeRatesController(BaseController):
         self.logger = logging.getLogger(__name__)
 
     def get_exchange_rates(self):
-        """Does a GET request to /exchangerate.
+        """Does a GET request to /exchangerates.
 
         Retrieve current exchange rates
 
@@ -43,7 +43,7 @@ class ExchangeRatesController(BaseController):
             # Prepare query URL
             self.logger.info('Preparing query URL for get_exchange_rates.')
             _query_builder = Configuration.get_base_uri()
-            _query_builder += '/exchangerate'
+            _query_builder += '/exchangerates'
             _query_url = APIHelper.clean_url(_query_builder)
     
             # Prepare headers
