@@ -9,7 +9,7 @@ except(IOError, ImportError):
 
 setup(
     name='raas',
-    version='2.0.0',
+    version='2.2.0',
     description='With this RESTful API you can integrate a global reward or incentive program into your app or platform. If you have any questions or if you\'d like to receive your own credentials, please contact us at devsupport@tangocard.com.',
     long_description=long_description,
     author='APIMatic SDK Generator',
