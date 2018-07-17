@@ -5,7 +5,7 @@
 
     This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0 ( https://apimatic.io )
 """
-
+from raas.api_helper import APIHelper
 
 class GetDepositResponseModel(object):
 
@@ -16,7 +16,7 @@ class GetDepositResponseModel(object):
     Attributes:
         amount (float): The deposit amount
         amount_charged (float): The amount charged
-        created_date (string): The date the deposit was made
+        created_date (datetime): The date the deposit was made
         fee_percent (float): The fee percentage
         reference_deposit_id (string): The deposit reference id
         status (string): The deposit's status
@@ -45,7 +45,7 @@ class GetDepositResponseModel(object):
         # Initialize members of the class
         self.amount = amount
         self.amount_charged = amount_charged
-        self.created_date = created_date
+        self.created_date = APIHelper.RFC3339DateTime(created_date) if created_date else None
         self.fee_percent = fee_percent
         self.reference_deposit_id = reference_deposit_id
         self.status = status
@@ -71,7 +71,7 @@ class GetDepositResponseModel(object):
         # Extract variables from the dictionary
         amount = dictionary.get('amount')
         amount_charged = dictionary.get('amountCharged')
-        created_date = dictionary.get('createdDate')
+        created_date = APIHelper.RFC3339DateTime.from_value(dictionary.get("createdDate")).datetime if dictionary.get("createdDate") else None
         fee_percent = dictionary.get('feePercent')
         reference_deposit_id = dictionary.get('referenceDepositID')
         status = dictionary.get('status')

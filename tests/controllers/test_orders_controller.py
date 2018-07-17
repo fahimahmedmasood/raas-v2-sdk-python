@@ -34,25 +34,25 @@ class OrdersControllerTests(ControllerTestBase):
         
         # Test whether the captured response is as we expected
         self.assertIsNotNone(result)
-        expected_body = APIHelper.json_deserialize((
-            '{"referenceOrderID":"RA180426-1401-64","customerIdentifier":"sdkautotest4",'
-            '"accountIdentifier":"sdkautotest5","accountNumber":"A32386768","amountCharg'
-            'ed":{"value":1,"currencyCode":"USD","total":1},"marginShare":{"value":0,"cu'
-            'rrencyCode":"USD"},"denomination":{"value":1,"currencyCode":"USD"},"utid":"'
-            'U561593","rewardName":"Reward Link","sender":{"firstName":"","lastName":"",'
-            '"email":""},"recipient":{"email":"","firstName":"","lastName":""},"sendEmai'
-            'l":false,"status":"COMPLETE","createdAt":"2018-04-26T20:08:59.624Z","reward'
-            '":{"credentials":{"Redemption URL":"https://sandbox.rewardlink.io/r/1/ed0Ht'
-            'zSblNV6oFddNnnlf68eXzGQoREvcxwxu_Vi5Wk"},"credentialList":[{"label":"Redemp'
-            'tion URL","value":"https://sandbox.rewardlink.io/r/1/ed0HtzSblNV6oFddNnnlf6'
-            '8eXzGQoREvcxwxu_Vi5Wk","type":"url"}],"redemptionInstructions":"<p>&bull; C'
-            'lick on the redemption link above to activate your Reward Link.<br />\\r\\n'
-            '&bull; Next, you will be able to spend your balance on retail gift cards.</'
-            'p>\\r\\n\\r\\n<p>If you don&#39;t want to spend your entire Reward Link val'
-            'ue right away, save the email or URL and return via the redemption link - y'
-            'our value will be waiting to be spent. This allows you to store the balance'
-            ' to redeem at another time.</p>\\r\\n"}}'
-            ))
+        expected_body = APIHelper.json_deserialize(
+            '{"referenceOrderID":"RA180426-1401-64","customerIdentifier":"sdkautotest4"'
+            ',"accountIdentifier":"sdkautotest5","accountNumber":"A32386768","amountChar'
+            'ged":{"value":1,"currencyCode":"USD","total":1},"marginShare":{"value":0,"c'
+            'urrencyCode":"USD"},"denomination":{"value":1,"currencyCode":"USD"},"utid":'
+            '"U561593","rewardName":"Reward Link","sender":{"firstName":"","lastName":""'
+            ',"email":""},"recipient":{"email":"","firstName":"","lastName":""},"sendEma'
+            'il":false,"status":"COMPLETE","createdAt":"2018-04-26T20:08:59.624Z","rewar'
+            'd":{"credentials":{"Redemption URL":"https://sandbox.rewardlink.io/r/1/ed0H'
+            'tzSblNV6oFddNnnlf68eXzGQoREvcxwxu_Vi5Wk"},"credentialList":[{"label":"Redem'
+            'ption URL","value":"https://sandbox.rewardlink.io/r/1/ed0HtzSblNV6oFddNnnlf'
+            '68eXzGQoREvcxwxu_Vi5Wk","type":"url"}],"redemptionInstructions":"<p>&bull; '
+            'Click on the redemption link above to activate your Reward Link.<br />\\r'
+            '\\n&bull; Next, you will be able to spend your balance on retail gift cards'
+            '.</p>\\r\\n\\r\\n<p>If you don&#39;t want to spend your entire Reward Link '
+            'value right away, save the email or URL and return via the redemption link '
+            '- your value will be waiting to be spent. This allows you to store the bala'
+            'nce to redeem at another time.</p>\\r\\n"}}'
+            )
         received_body = APIHelper.json_deserialize(self.response_catcher.response.raw_body)
         self.assertTrue(TestHelper.match_body(expected_body, received_body, check_values = True))
 
@@ -60,10 +60,10 @@ class OrdersControllerTests(ControllerTestBase):
     # Tests placing an order with the minimum parameters required
     def test_test_place_order_with_minimum_criteria(self):
         # Parameters for the API call
-        body = APIHelper.json_deserialize((
-            '{"accountIdentifier":"sdkautotest5","amount":1.00,"customerIdentifier":"sdk'
-            'autotest4","sendEmail":false,"utid":"U561593"}'
-            ), CreateOrderRequestModel.from_dictionary)
+        body = APIHelper.json_deserialize(
+            '{"accountIdentifier":"sdkautotest5","amount":1.00,"customerIdentifier":"sd'
+            'kautotest4","sendEmail":false,"utid":"U561593"}'
+            , CreateOrderRequestModel.from_dictionary)
 
         # Perform the API call through the SDK function
         result = self.controller.create_order(body)
@@ -73,25 +73,25 @@ class OrdersControllerTests(ControllerTestBase):
         
         # Test whether the captured response is as we expected
         self.assertIsNotNone(result)
-        expected_body = APIHelper.json_deserialize((
-            '{"referenceOrderID":"RA180426-1401-64","customerIdentifier":"sdkautotest4",'
-            '"accountIdentifier":"sdkautotest5","accountNumber":"A32386768","amountCharg'
-            'ed":{"value":1,"currencyCode":"USD","total":1},"marginShare":{"value":0,"cu'
-            'rrencyCode":"USD"},"denomination":{"value":1,"currencyCode":"USD"},"utid":"'
-            'U561593","rewardName":"Reward Link","sender":{"firstName":"","lastName":"",'
-            '"email":""},"recipient":{"email":"","firstName":"","lastName":""},"sendEmai'
-            'l":false,"status":"COMPLETE","createdAt":"2018-04-26T20:08:59.624Z","reward'
-            '":{"credentials":{"Redemption URL":"https://sandbox.rewardlink.io/r/1/ed0Ht'
-            'zSblNV6oFddNnnlf68eXzGQoREvcxwxu_Vi5Wk"},"credentialList":[{"label":"Redemp'
-            'tion URL","value":"https://sandbox.rewardlink.io/r/1/ed0HtzSblNV6oFddNnnlf6'
-            '8eXzGQoREvcxwxu_Vi5Wk","type":"url"}],"redemptionInstructions":"<p>&bull; C'
-            'lick on the redemption link above to activate your Reward Link.<br />\\r\\n'
-            '&bull; Next, you will be able to spend your balance on retail gift cards.</'
-            'p>\\r\\n\\r\\n<p>If you don&#39;t want to spend your entire Reward Link val'
-            'ue right away, save the email or URL and return via the redemption link - y'
-            'our value will be waiting to be spent. This allows you to store the balance'
-            ' to redeem at another time.</p>\\r\\n"}}'
-            ))
+        expected_body = APIHelper.json_deserialize(
+            '{"referenceOrderID":"RA180426-1401-64","customerIdentifier":"sdkautotest4"'
+            ',"accountIdentifier":"sdkautotest5","accountNumber":"A32386768","amountChar'
+            'ged":{"value":1,"currencyCode":"USD","total":1},"marginShare":{"value":0,"c'
+            'urrencyCode":"USD"},"denomination":{"value":1,"currencyCode":"USD"},"utid":'
+            '"U561593","rewardName":"Reward Link","sender":{"firstName":"","lastName":""'
+            ',"email":""},"recipient":{"email":"","firstName":"","lastName":""},"sendEma'
+            'il":false,"status":"COMPLETE","createdAt":"2018-04-26T20:08:59.624Z","rewar'
+            'd":{"credentials":{"Redemption URL":"https://sandbox.rewardlink.io/r/1/ed0H'
+            'tzSblNV6oFddNnnlf68eXzGQoREvcxwxu_Vi5Wk"},"credentialList":[{"label":"Redem'
+            'ption URL","value":"https://sandbox.rewardlink.io/r/1/ed0HtzSblNV6oFddNnnlf'
+            '68eXzGQoREvcxwxu_Vi5Wk","type":"url"}],"redemptionInstructions":"<p>&bull; '
+            'Click on the redemption link above to activate your Reward Link.<br />\\r'
+            '\\n&bull; Next, you will be able to spend your balance on retail gift cards'
+            '.</p>\\r\\n\\r\\n<p>If you don&#39;t want to spend your entire Reward Link '
+            'value right away, save the email or URL and return via the redemption link '
+            '- your value will be waiting to be spent. This allows you to store the bala'
+            'nce to redeem at another time.</p>\\r\\n"}}'
+            )
         received_body = APIHelper.json_deserialize(self.response_catcher.response.raw_body)
         self.assertTrue(TestHelper.match_body(expected_body, received_body))
 

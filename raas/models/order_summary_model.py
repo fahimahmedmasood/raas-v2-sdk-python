@@ -24,7 +24,7 @@ class OrderSummaryModel(object):
         margin_share (CurrencyBreakdownModel): The margin share information
         utid (string): The UTID
         reward_name (string): The reward's name
-        sender (string): The sender's information
+        sender (NameEmailModel): The sender's information
         recipient (NameEmailModel): The recipient's information
         send_email (bool): Indicates if an an email was sent to the recipient
         status (string): The order's status
@@ -111,7 +111,7 @@ class OrderSummaryModel(object):
         margin_share = raas.models.currency_breakdown_model.CurrencyBreakdownModel.from_dictionary(dictionary.get('marginShare')) if dictionary.get('marginShare') else None
         utid = dictionary.get('utid')
         reward_name = dictionary.get('rewardName')
-        sender = dictionary.get('sender')
+        sender = raas.models.name_email_model.NameEmailModel.from_dictionary(dictionary.get('sender')) if dictionary.get('sender') else None
         recipient = raas.models.name_email_model.NameEmailModel.from_dictionary(dictionary.get('recipient')) if dictionary.get('recipient') else None
         send_email = dictionary.get('sendEmail')
         status = dictionary.get('status')
