@@ -14,7 +14,7 @@ setup(
     long_description=long_description,
     author='APIMatic SDK Generator',
     author_email='support@apimatic.io',
-    url='https://apimatic.io/',
+    url='https://github.com/fahimahmedmasood/raas-v2-sdk-python/',
     packages=find_packages(),
     install_requires=[
         'jsonpickle>=0.7.1, <1.0',
